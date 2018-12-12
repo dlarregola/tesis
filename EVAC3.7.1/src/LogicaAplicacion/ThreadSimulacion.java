@@ -322,6 +322,7 @@ public class ThreadSimulacion extends Thread{
     //Mientras que debo lograr el efecto de continuidad en los agentes durante un paso de tiempo (para ello uso los sub pasos)
     //el ambiente debe permanecer sin alteración alguna durante los mecionados sub pasos de tiempo. Es decir, en un paso de tiempo
     //el ambiente evoluciona una única vez, mientras que los agentes para lograr el efecto de continuidad deben realizar sub pasos.
+    //TODO: actualizar datos del sensor
     private void faseAutomata(){
         ListIterator iterador = this.ordenActualizacion.listIterator();
         while (iterador.hasNext()) {
@@ -372,6 +373,11 @@ public class ThreadSimulacion extends Thread{
                 Utilidades.recalcularDistancias(this.ac3);//HACIAS CADA UNA DE LAS SALIDAS
                 this.setRecalcular(false);
         }
+
+        //TODO: Llamar metodo sobre la lista de sensores que calcule
+        // la densidad de cada sensor paso como parametro lista de sensores
+        // Y aplicar politica de avisos
+
     }
     
     private void faseIntencion() {

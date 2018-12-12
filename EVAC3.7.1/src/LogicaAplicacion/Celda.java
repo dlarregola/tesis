@@ -14,15 +14,7 @@ public class Celda {
     private LinkedList distanciasSalidas;
     private Agente agente;
     private boolean actualizada;
-
-    public Sensor getSensor() {
-        return sensor;
-    }
-
-    public void setSensor(Sensor sensor) {
-        this.sensor = sensor;
-    }
-
+    private int tipoSensor;
     private Sensor sensor;
 
     public Celda(int estado, int nivelTransito, int nivelCombustibilidad, double nivelHumo, double nivelFuego, Agente agente, boolean actualizada) {
@@ -35,6 +27,7 @@ public class Celda {
         this.distanciasSalidas = new LinkedList();
         this.agente=agente;
         this.actualizada=actualizada;
+        this.tipoSensor = 100;
     }
     
     public Celda(int estado, int nivelTransito, int nivelCombustibilidad, double nivelHumo, double nivelFuego, boolean actualizada) {
@@ -47,6 +40,7 @@ public class Celda {
         this.distanciasSalidas = new LinkedList();
         this.agente=null;
         this.actualizada=actualizada;
+        this.tipoSensor = 100;
     }
     
     public Celda(int estado, int nivelTransito, int nivelCombustibilidad, double nivelHumo, double nivelFuego) {
@@ -59,6 +53,7 @@ public class Celda {
         this.distanciasSalidas = new LinkedList();
         this.agente=null;
         this.actualizada=false;
+        this.tipoSensor = 100;
     }
 
     public Celda() {
@@ -71,6 +66,7 @@ public class Celda {
         this.distanciasSalidas = new LinkedList();
         this.agente=null;
         this.actualizada=false;
+        this.tipoSensor = 100;
     }
 
     public int getEstado() {
@@ -165,5 +161,21 @@ public class Celda {
         this.actualizada = actualizada;
     }
 
+    public Sensor getSensor() {
+        return sensor;
+    }
+
+    public void setSensor(Sensor sensor) {
+        this.tipoSensor = sensor.getTipo();
+        this.sensor = sensor;
+    }
+
+    public int getTipoSensor() {
+        return tipoSensor;
+    }
+
+    public void setTipoSensor(int tipoSensor) {
+        this.tipoSensor = tipoSensor;
+    }
 }
 

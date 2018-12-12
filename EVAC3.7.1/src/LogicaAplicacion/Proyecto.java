@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
-import javax.swing.JFrame;
+import javax.swing.*;
 
 
 /**
@@ -39,6 +39,10 @@ public class Proyecto {
     private int cantidadPersonas;
     private int cantidadSalidas;
     private LinkedList salidas;
+    private LinkedList sensores;
+    private int cantidadSensores;
+    private int potenciaSensor;
+    private static final int potenciaConst =10;
     
     //CRISTIAN 07/08/2018
     private int velocidadMinima;
@@ -47,7 +51,7 @@ public class Proyecto {
     private int tiempoReaccionMaximo;
     //CRISTIAN 07/08/2018
     
-    private Proyecto(int tamañox, int tamañoy, int visualizacion, int propagacionHumo, int propagacionFuego, int personas, int salidas, int valido, AutomataCelular ac, String nombreProyecto, String notasProyecto) {
+    private Proyecto(int tamañox, int tamañoy, int visualizacion, int propagacionHumo, int propagacionFuego, int personas, int salidas, int valido, AutomataCelular ac, String nombreProyecto, String notasProyecto, int cantSensores, LinkedList listSensores, int potenciaSensores) {
         this.tamañox = tamañox;
         this.tamañoy = tamañoy;
         this.visualizacion = visualizacion;
@@ -61,11 +65,14 @@ public class Proyecto {
         this.ac = ac;
         this.proyectoValido=valido;
         this.salidas=new LinkedList();
+        this.cantidadSensores = cantSensores;
+        this.sensores = listSensores;
+        this.potenciaSensor = potenciaSensores;
     }
 
     private Proyecto() {
-        this.tamañox = 0;
-        this.tamañoy = 0;
+        this.tamañox = 10;
+        this.tamañoy = 10;
         this.visualizacion = 1;
         this.propagacionHumo = 1;
         this.propagacionFuego = 1;
@@ -77,6 +84,9 @@ public class Proyecto {
         this.puntoInicio = new Point(-1, -1);
         this.ac = new AutomataCelular();
         this.salidas=new LinkedList();
+        this.cantidadSensores = 0;
+        this.sensores = new LinkedList();
+        this.potenciaSensor = potenciaConst;
     }
 
     public static Proyecto getProyecto() {   //Proyecto nuevo
@@ -114,8 +124,11 @@ public class Proyecto {
             int valido = new Integer(filtroDatosGenerales.nextToken());
             int alto = new Integer(filtroDatosGenerales.nextToken());
             int ancho = new Integer(filtroDatosGenerales.nextToken());
+            int cantSensores = new Integer(filtroDatosGenerales.nextToken());
+            int potenciaSensores = new Integer(filtroDatosGenerales.nextToken());
             String nombreProyecto = filtroDatosGenerales.nextToken();
             String notasProyecto = filtroDatosGenerales.nextToken();
+            LinkedList listSensores = new LinkedList();
             while (!notasProyecto.endsWith("@F@")) {
                 notasProyecto = notasProyecto + "\n" + br.readLine();
             }
@@ -168,7 +181,13 @@ public class Proyecto {
                     int combustionAC = new Integer(filtroACE.nextToken());
                     Double nivelHumoAC = new Double(filtroACE.nextToken());
                     Double nivelFuegoAC = new Double(filtroACE.nextToken());
+                    int tipoSensorAC = new Integer(filtroACE.nextToken());
                     celda = new Celda(estadoAC, velocidadAC, combustionAC, nivelHumoAC, nivelFuegoAC);
+                    celda.setTipoSensor(tipoSensorAC);
+                    if(tipoSensorAC > 0 ){
+                        celda.setSensor(new Sensor(potenciaSensores, i, j, tipoSensorAC));
+                        listSensores.add(celda.getSensor());
+                    }
                     if (estadoAC == 6){//La celda tiene un agente
                         int tipoAgente = new Integer(filtroACE.nextToken());
                         Agente agente=new Agente(tipoAgente);
@@ -178,8 +197,9 @@ public class Proyecto {
                     automataCelular.setCelda(i, j, celda);
                 }
             }
-            
-            proyectoActual = new Proyecto(tamañox, tamañoy, visualizacion, propagacionHumo, propagacionFuego, personas, salidas, valido, automataCelular, nombreProyecto, notasProyecto);
+
+
+            proyectoActual = new Proyecto(tamañox, tamañoy, visualizacion, propagacionHumo, propagacionFuego, personas, salidas, valido, automataCelular, nombreProyecto, notasProyecto, cantSensores ,listSensores,potenciaSensores);
             
             //EN LAS NOTAS DEL PROYECTO VAMOS A GUARDAR EL PUNTO DE INICIO 
             //CRISTIAN 19/04/2018
@@ -218,9 +238,12 @@ public class Proyecto {
             int valido = new Integer(filtroDatosGenerales.nextToken());
             int alto = new Integer(filtroDatosGenerales.nextToken());
             int ancho = new Integer(filtroDatosGenerales.nextToken());
+            int cantSensores = new Integer(filtroDatosGenerales.nextToken());
+            int potenciaSensores = new Integer(filtroDatosGenerales.nextToken());
             String nombreProyecto = filtroDatosGenerales.nextToken();
             String notasProyecto = filtroDatosGenerales.nextToken();
-            while (!notasProyecto.endsWith("@F@")) {
+             LinkedList listSensores = new LinkedList();
+             while (!notasProyecto.endsWith("@F@")) {
                 notasProyecto = notasProyecto + "\n" + br.readLine();
             }
             //notasProyecto = notasProyecto.substring(0, notasProyecto.length() - 3);
@@ -272,7 +295,15 @@ public class Proyecto {
                     int combustionAC = new Integer(filtroACE.nextToken());
                     Double nivelHumoAC = new Double(filtroACE.nextToken());
                     Double nivelFuegoAC = new Double(filtroACE.nextToken());
+                    int tipoSensorAC = new Integer(filtroACE.nextToken());
                     celda = new Celda(estadoAC, velocidadAC, combustionAC, nivelHumoAC, nivelFuegoAC);
+                    celda.setTipoSensor(tipoSensorAC);
+                    if(tipoSensorAC > 100 ){
+                        System.out.println("Celda x: "+i+" y: "+j+" tipo Sensor "+tipoSensorAC);
+                        //JOptionPane.showMessageDialog(null, "tipo"+tipoSensorAC);
+                        celda.setSensor(new Sensor(potenciaSensores, i, j, tipoSensorAC));
+                        listSensores.add(celda.getSensor());
+                    }
                     if (estadoAC == 6){//La celda tiene un agente
                         int tipoAgente = new Integer(filtroACE.nextToken());
                         Agente agente=new Agente(tipoAgente);
@@ -282,7 +313,7 @@ public class Proyecto {
                     automataCelular.setCelda(i, j, celda);
                 }
             }
-            proyectoActual = new Proyecto(tamañox, tamañoy, visualizacion, propagacionHumo, propagacionFuego, personas, salidas, valido, automataCelular, nombreProyecto, notasProyecto);
+            proyectoActual = new Proyecto(tamañox, tamañoy, visualizacion, propagacionHumo, propagacionFuego, personas, salidas, valido, automataCelular, nombreProyecto, notasProyecto,cantSensores,listSensores,potenciaSensores);
             
             //EN LAS NOTAS DEL PROYECTO VAMOS A GUARDAR EL PUNTO DE INICIO 
             //CRISTIAN 19/04/2018 y 09/08/2018
@@ -307,6 +338,7 @@ public class Proyecto {
             FileReader fr = new FileReader(dialogoAbrir.getDirectory() + dialogoAbrir.getFile());
             BufferedReader br = new BufferedReader(fr);
             if (dialogoAbrir.getDirectory() != null && dialogoAbrir.getFile() != null) {
+                LinkedList listSensores = new LinkedList();
                 String leerArchivo = br.readLine();
                 StringTokenizer filtroDatosGenerales = new StringTokenizer(leerArchivo, ",");
                 int tamañox = new Integer(filtroDatosGenerales.nextToken());
@@ -319,6 +351,8 @@ public class Proyecto {
                 int valido = new Integer(filtroDatosGenerales.nextToken());
                 int alto = new Integer(filtroDatosGenerales.nextToken());
                 int ancho = new Integer(filtroDatosGenerales.nextToken());
+                int cantSensores = new Integer(filtroDatosGenerales.nextToken());
+                int potenciaSensores = new Integer(filtroDatosGenerales.nextToken());
                 String nombreProyecto = filtroDatosGenerales.nextToken();
                 String notasProyecto = filtroDatosGenerales.nextToken();
                 while (!notasProyecto.endsWith("@F@")) {
@@ -339,8 +373,13 @@ public class Proyecto {
                         int combustionAC = new Integer(filtroACE.nextToken());
                         int nivelHumoAC = new Integer(filtroACE.nextToken());
                         int nivelFuegoAC = new Integer(filtroACE.nextToken());
-                        int distanciaSalidaAC = new Integer(filtroACE.nextToken());
+                        int tipoSensorAC = new Integer(filtroACE.nextToken());
                         estado = new Celda(estadoAC, velocidadAC, combustionAC, nivelHumoAC, nivelFuegoAC);
+                        estado.setTipoSensor(tipoSensorAC);
+                        if(tipoSensorAC > 0 ){
+                            estado.setSensor(new Sensor(potenciaSensores, i, j, tipoSensorAC));
+                            listSensores.add(estado.getSensor());
+                        }
                         if (estadoAC == 6){//La celda tiene un agente
                             int dañoAC = new Integer(filtroACE.nextToken());
                             int tipoAgente = new Integer(filtroACE.nextToken());
@@ -350,7 +389,7 @@ public class Proyecto {
                         guardadoAC.setCelda(i, j, estado);
                     }
                 }
-                proyectoActual = new Proyecto(tamañox, tamañoy, visualizacion, propagacionHumo, propagacionFuego, personas, salidas, valido, guardadoAC, nombreProyecto, notasProyecto);
+                proyectoActual = new Proyecto(tamañox, tamañoy, visualizacion, propagacionHumo, propagacionFuego, personas, salidas, valido, guardadoAC, nombreProyecto, notasProyecto,cantSensores,listSensores,potenciaSensores);
             }
         }
         catch (HeadlessException | IOException | NumberFormatException ex) {
@@ -386,6 +425,8 @@ public class Proyecto {
                 almacenarArchivo = Proyecto.proyectoValido() ? almacenarArchivo + Integer.toString(1) + "," : almacenarArchivo + Integer.toString(0)+ ",";
                 almacenarArchivo = almacenarArchivo + Integer.toString(Proyecto.getProyecto().getAc().getAlto()) + ",";
                 almacenarArchivo = almacenarArchivo + Integer.toString(Proyecto.getProyecto().getAc().getAncho()) + ",";
+                almacenarArchivo = almacenarArchivo + Integer.toString(Proyecto.getProyecto().getCantidadSensores()) + ",";
+                almacenarArchivo = almacenarArchivo + Integer.toString(Proyecto.getProyecto().getPotenciaSensor()) + ",";
                 String cadenaSinBlancos = "";
                 StringTokenizer stTexto = new StringTokenizer(Proyecto.getProyecto().getNombreProyecto());
                 while (stTexto.hasMoreElements()) {
@@ -417,9 +458,9 @@ public class Proyecto {
                         almacenarArchivo = almacenarArchivo + "," + Integer.toString(Proyecto.getProyecto().getAc().getCelda(i, j).getNivelCombustibilidad());
                         almacenarArchivo = almacenarArchivo + "," + Double.toString(Proyecto.getProyecto().getAc().getCelda(i, j).getNivelHumo());
                         almacenarArchivo = almacenarArchivo + "," + Double.toString(Proyecto.getProyecto().getAc().getCelda(i, j).getNivelFuego());
-                        //almacenarArchivo = almacenarArchivo + "," + Integer.toString(Proyecto.getProyecto().getAc().getCelda(i, j).getDistanciaSalida()).toString();
+
+                        almacenarArchivo = almacenarArchivo + "," + Integer.toString(Proyecto.getProyecto().getAc().getCelda(i, j).getTipoSensor());
                         if (Proyecto.getProyecto().getAc().getCelda(i, j).getEstado() == 6) {
-                            //this.almacenarArchivo = this.almacenarArchivo + "," + new Integer(((EstadoAgente)Simulador.getSimulador().getAc().getEstado(i, j)).getDa\u00f1o()).toString();
                             almacenarArchivo = almacenarArchivo + "," + Integer.toString(Proyecto.getProyecto().getAc().getCelda(i, j).getAgente().getTipo());
                         }
                         almacenarArchivo = almacenarArchivo + "]";
@@ -586,4 +627,32 @@ public class Proyecto {
         this.tiempoReaccionMaximo = tiempoReaccionMaximo;
     }
     //CRISTIAN 0708/2018
+
+
+    public LinkedList getSensores() {
+        return sensores;
+    }
+
+    public void setSensores(LinkedList sensores) {
+        this.sensores = sensores;
+    }
+
+    public void addListSensores(Sensor sensor) {
+        this.sensores.add(sensor);
+    }
+    public int getCantidadSensores() {
+        return this.sensores.size();
+    }
+
+    public void setCantidadSensores(int cantidadSensores) {
+        this.cantidadSensores = cantidadSensores;
+    }
+
+    public int getPotenciaSensor() {
+        return potenciaSensor;
+    }
+
+    public void setPotenciaSensor(int potenciaSensor) {
+        this.potenciaSensor = potenciaSensor;
+    }
 }

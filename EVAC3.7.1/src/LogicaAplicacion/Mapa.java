@@ -378,13 +378,15 @@ public class Mapa extends Canvas{
         switch (this.matriz.getCelda(this.y, this.x).getEstado()) {
             case 0:
             case 4: {
-                g.setColor(Color.MAGENTA);
-                this.matriz.getCelda(this.y, this.x).setSensor(new Sensor(10));
-                this.matriz.getCelda(this.y, this.x).getSensor().setUbicacion(new Point(this.y, this.x));
 
-                this.matriz.getCelda(this.y, this.x).setEstado(6);
-                g.fillRect(this.i + 1, this.j + 1, tamanoAspecto-2, tamanoAspecto-2);
+                this.matriz.getCelda(this.y, this.x).setSensor(new Sensor(Proyecto.getProyecto().getPotenciaSensor(),this.x,this.y,101));
+                Proyecto.getProyecto().addListSensores(this.matriz.getCelda(this.y, this.x).getSensor());
+                g.setColor(Color.green);
+                g.drawOval(this.i+1,this.j+1,5,5);
+
                 Proyecto.getProyecto().setProyectoValido(0);
+
+                //TODO: setear sensor en lista y sumar cantidad
                 break;
             }
             default: {
@@ -522,6 +524,14 @@ public class Mapa extends Canvas{
                             g.setColor(Color.BLACK);
                             g.drawLine(i + 1, j + 1, i + tamanoAspecto-1, j + tamanoAspecto-1);
                         }
+
+                        //Dibujo sensor de densidad cuando cargo un archivo
+                        if (this.matriz.getCelda(this.y, this.x).getTipoSensor() == 101){
+                            System.out.println("Celda x: "+this.y+" y: "+this.x+" tipo Sensor "+this.matriz.getCelda(this.y, this.x).getTipoSensor() );
+
+                            g.setColor(Color.green);
+                            g.drawOval(i + 1,j + 1,5,5);
+                        }
                         break;
                     }
                     case 1: {//PARED EXTERIOR
@@ -558,6 +568,11 @@ public class Mapa extends Canvas{
                         } else if(this.matriz.getCelda(this.y, this.x).getNivelFuego() > 0.0 && this.matriz.getCelda(this.y, this.x).getNivelFuego() < 0.20){
                             g.setColor(new Color(255, 200, 0));
                             g.fillRect(i + 1, j + 1, tamanoAspecto-1, tamanoAspecto-1);
+                        }
+                        //Dibujo sensor de densidad cuando cargo un archivo
+                        if (this.matriz.getCelda(this.y, this.x).getTipoSensor() == 101){
+                            g.setColor(Color.green);
+                            g.drawOval(i+1,j + 1,5,5);
                         }
                         break;
                     }
