@@ -11,10 +11,7 @@ import InterfazUsusario.VentanaSimulacion;
 import java.awt.Point;
 import java.math.RoundingMode;
 import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.ListIterator;
-import java.util.Random;
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
@@ -378,7 +375,53 @@ public class ThreadSimulacion extends Thread{
         // la densidad de cada sensor paso como parametro lista de sensores
         // Y aplicar politica de avisos
 
+        calcularDensidadSensores(Proyecto.getProyecto(),this.ac1);
+
+
     }
+    private  void calcularDensidadSensores(Proyecto proy, AutomataCelular ac1){
+
+        LinkedList listSensores = proy.getListSensores();
+        int potenciaSensor = proy.getPotenciaSensor();
+        int cuadradosAncho = (int)((double)proy.getProyecto().getTamañox() / 0.4) + 1;
+        int cuadradosAlto = (int)((double)proy.getProyecto().getTamañoy() / 0.4) + 1;
+
+        Iterator<Sensor> it = listSensores.iterator();
+
+        System.out.println("potencia sensor : "+potenciaSensor);
+
+        while (it.hasNext()){
+            Sensor sensor = it.next();
+            int x =  (int)sensor.getUbicacion().getX();
+            int y =  (int)sensor.getUbicacion().getY();
+
+            LinkedList vecinos = vecinosAgentesRadio(y,x,cuadradosAncho,cuadradosAlto,potenciaSensor,ac1);
+            System.out.println("Sensor x: "+x+" y: "+y+" tipo Sensor "+sensor.getTipo()+" cantidad de vecinos "+vecinos.size());
+        }
+
+    }
+
+    private  LinkedList vecinosAgentesRadio(int y,int x, int ancho, int alto, int radio, AutomataCelular ac1){
+        LinkedList vecinos = new LinkedList() ;
+        for(int i=(y-radio); i<=(y+radio) ;i++){
+            if(i>=1 && i<alto) {
+                for (int j = (x - radio); j <= (x + radio); j++) {
+
+                    if (j >= 1 && j < ancho) {
+                        int estado = ac1.getCelda(i, j).getEstado();
+                        if (estado == 6) {
+                            vecinos.add(new Point(j, i));
+                        }
+
+                    }
+                }
+            }
+        }
+        return vecinos;
+
+    }
+
+
     
     private void faseIntencion() {
         boolean chequearComportamiento;

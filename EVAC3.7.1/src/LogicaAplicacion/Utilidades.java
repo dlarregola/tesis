@@ -6,10 +6,7 @@
 package LogicaAplicacion;
 
 import java.awt.Point;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.ListIterator;
-import java.util.Random;
+import java.util.*;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -587,6 +584,8 @@ public class Utilidades {
        }
        return true;
    }
-    
-    
+
+
+
+
 }

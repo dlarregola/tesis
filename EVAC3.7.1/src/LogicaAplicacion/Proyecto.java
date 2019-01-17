@@ -299,7 +299,6 @@ public class Proyecto {
                     celda = new Celda(estadoAC, velocidadAC, combustionAC, nivelHumoAC, nivelFuegoAC);
                     celda.setTipoSensor(tipoSensorAC);
                     if(tipoSensorAC > 100 ){
-                        System.out.println("Celda x: "+i+" y: "+j+" tipo Sensor "+tipoSensorAC);
                         //JOptionPane.showMessageDialog(null, "tipo"+tipoSensorAC);
                         celda.setSensor(new Sensor(potenciaSensores, i, j, tipoSensorAC));
                         listSensores.add(celda.getSensor());
@@ -629,7 +628,7 @@ public class Proyecto {
     //CRISTIAN 0708/2018
 
 
-    public LinkedList getSensores() {
+    public LinkedList getListSensores() {
         return sensores;
     }
 

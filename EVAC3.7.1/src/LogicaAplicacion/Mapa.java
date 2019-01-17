@@ -386,7 +386,6 @@ public class Mapa extends Canvas{
 
                 Proyecto.getProyecto().setProyectoValido(0);
 
-                //TODO: setear sensor en lista y sumar cantidad
                 break;
             }
             default: {
@@ -527,7 +526,7 @@ public class Mapa extends Canvas{
 
                         //Dibujo sensor de densidad cuando cargo un archivo
                         if (this.matriz.getCelda(this.y, this.x).getTipoSensor() == 101){
-                            System.out.println("Celda x: "+this.y+" y: "+this.x+" tipo Sensor "+this.matriz.getCelda(this.y, this.x).getTipoSensor() );
+                           // System.out.println("Celda x: "+this.y+" y: "+this.x+" tipo Sensor "+this.matriz.getCelda(this.y, this.x).getTipoSensor() );
 
                             g.setColor(Color.green);
                             g.drawOval(i + 1,j + 1,5,5);
