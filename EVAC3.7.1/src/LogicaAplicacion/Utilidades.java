@@ -460,7 +460,7 @@ public class Utilidades {
         ac.setAncho(origen.getAncho());
         for (int i = 0; i < alto; ++i) {
             for (int j = 0; j < ancho; ++j) {
-                Celda celda=new Celda(origen.getCelda(i,j).getEstado(),origen.getCelda(i,j).getNivelTransito(),origen.getCelda(i,j).getNivelCombustibilidad(),origen.getCelda(i,j).getNivelHumo(),origen.getCelda(i,j).getNivelFuego(),origen.getCelda(i,j).isActualizada());
+                Celda celda=new Celda(origen.getCelda(i,j).getEstado(),origen.getCelda(i,j).getNivelTransito(),origen.getCelda(i,j).getNivelCombustibilidad(),origen.getCelda(i,j).getNivelHumo(),origen.getCelda(i,j).getNivelFuego(),origen.getCelda(i,j).isActualizada(),origen.getCelda(i,j).getSensor(),origen.getCelda(i,j).getTipoSensor());
                 celda.setDistanciasSalidas(copiarDistancias(origen.getCelda(i,j).getDistanciasSalidas()));
                 if(origen.getCelda(i,j).hayAgente()){
                     celda.setAgente(copiarAgente(origen.getCelda(i,j).getAgente()));
@@ -472,7 +472,7 @@ public class Utilidades {
     }
     
     public static Celda copiarCeldaSinAgente(Celda original){
-        Celda celda=new Celda(original.getEstado(),original.getNivelTransito(),original.getNivelCombustibilidad(),original.getNivelHumo(),original.getNivelFuego(),original.isActualizada());
+        Celda celda=new Celda(original.getEstado(),original.getNivelTransito(),original.getNivelCombustibilidad(),original.getNivelHumo(),original.getNivelFuego(),original.isActualizada(),original.getSensor(),original.getTipoSensor());
         celda.setDistanciasSalidas(copiarDistancias(original.getDistanciasSalidas()));
         celda.setAgente(null);
         return celda;

@@ -205,6 +205,8 @@ public class Mapa extends Canvas{
         this.matriz.getCelda(this.y, this.x).setNivelFuego(0);
         this.matriz.getCelda(this.y, this.x).setNivelHumo(0);
         this.matriz.getCelda(this.y, this.x).setNivelTransito(0);
+        this.matriz.getCelda(this.y, this.x).deleteSensor();
+
         g.fillRect(this.i + 1, this.j + 1, tamanoAspecto-1, tamanoAspecto-1);
     }
     
@@ -625,6 +627,11 @@ public class Mapa extends Canvas{
                                 g.setColor(Color.BLACK);
                                 g.drawLine(i + 1, j + 1, i + tamanoAspecto-1, j + tamanoAspecto-1);
                             }   
+                        }
+                        //Dibujo sensor de densidad cuando cargo un archivo
+                        if (this.matriz.getCelda(this.y, this.x).getTipoSensor() == 101){
+                            g.setColor(Color.green);
+                            g.drawOval(i+1,j + 1,5,5);
                         }
                     }
                 }

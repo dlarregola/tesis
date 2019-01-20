@@ -9,6 +9,7 @@ public class Sensor {
     private Point ubicacion;
     private int tipo; // 100 sin sensor, 101 densidad, 102 fuego
     private int cantidadAgentes;
+    private Salida salidaMasCercana;
 
     public Sensor(int potencia, int x, int y ,int tipo) {
         this.potencia = potencia;
@@ -49,5 +50,13 @@ public class Sensor {
     public void printSensor(){
         JOptionPane.showMessageDialog(null, "Tipo "+this.tipo+" Potencia "+this.potencia+" x"+this.ubicacion.getX()+ "y "+this.ubicacion.getY());
 
+    }
+
+    public int getCantidadAgentes() {
+        return cantidadAgentes;
+    }
+
+    public void setCantidadAgentes(int cantidadAgentes) {
+        this.cantidadAgentes = cantidadAgentes;
     }
 }

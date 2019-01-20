@@ -15,7 +15,7 @@ public class Celda {
     private Agente agente;
     private boolean actualizada;
     private int tipoSensor;
-    private Sensor sensor;
+    private Sensor sensor; // 100 sin sensor, 101 densidad, 102 fuego
 
     public Celda(int estado, int nivelTransito, int nivelCombustibilidad, double nivelHumo, double nivelFuego, Agente agente, boolean actualizada) {
         this.estado = estado;
@@ -30,7 +30,7 @@ public class Celda {
         this.tipoSensor = 100;
     }
     
-    public Celda(int estado, int nivelTransito, int nivelCombustibilidad, double nivelHumo, double nivelFuego, boolean actualizada) {
+    public Celda(int estado, int nivelTransito, int nivelCombustibilidad, double nivelHumo, double nivelFuego, boolean actualizada,Sensor sensor, int tipoSensor) {
         this.estado = estado;
         this.nivelTransito = nivelTransito;
         this.nivelCombustibilidad = nivelCombustibilidad;
@@ -40,7 +40,8 @@ public class Celda {
         this.distanciasSalidas = new LinkedList();
         this.agente=null;
         this.actualizada=actualizada;
-        this.tipoSensor = 100;
+        this.sensor = sensor;
+        this.tipoSensor = tipoSensor;
     }
     
     public Celda(int estado, int nivelTransito, int nivelCombustibilidad, double nivelHumo, double nivelFuego) {
@@ -165,6 +166,10 @@ public class Celda {
         return sensor;
     }
 
+    public void deleteSensor(){
+        this.tipoSensor = 100;
+        this.sensor = null;
+    }
     public void setSensor(Sensor sensor) {
         this.tipoSensor = sensor.getTipo();
         this.sensor = sensor;

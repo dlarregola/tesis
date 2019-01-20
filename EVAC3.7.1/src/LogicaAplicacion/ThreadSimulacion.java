@@ -375,11 +375,11 @@ public class ThreadSimulacion extends Thread{
         // la densidad de cada sensor paso como parametro lista de sensores
         // Y aplicar politica de avisos
 
-        calcularDensidadSensores(Proyecto.getProyecto(),this.ac1);
+        calcularDensidadSensores(Proyecto.getProyecto());
 
 
     }
-    private  void calcularDensidadSensores(Proyecto proy, AutomataCelular ac1){
+    private  void calcularDensidadSensores(Proyecto proy){
 
         LinkedList listSensores = proy.getListSensores();
         int potenciaSensor = proy.getPotenciaSensor();
@@ -395,8 +395,11 @@ public class ThreadSimulacion extends Thread{
             int x =  (int)sensor.getUbicacion().getX();
             int y =  (int)sensor.getUbicacion().getY();
 
-            LinkedList vecinos = vecinosAgentesRadio(y,x,cuadradosAncho,cuadradosAlto,potenciaSensor,ac1);
-            System.out.println("Sensor x: "+x+" y: "+y+" tipo Sensor "+sensor.getTipo()+" cantidad de vecinos "+vecinos.size());
+            LinkedList vecinos = vecinosAgentesRadio(y,x,cuadradosAncho,cuadradosAlto,potenciaSensor,this.ac1);
+
+            this.ac1.getCelda(x,y).getSensor().setCantidadAgentes(vecinos.size());
+
+            System.out.println("tipo celda : "+ proy.getAc().getCelda(y,x).getEstado()+" Sensor x: "+x+" y: "+y+" tipo Sensor "+sensor.getTipo()+" cantidad de vecinos "+ this.ac1.getCelda(x,y).getSensor().getCantidadAgentes() );
         }
 
     }
