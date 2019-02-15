@@ -318,18 +318,18 @@ public class VentanaConfiguracionAmbiente extends javax.swing.JInternalFrame {
         botonInicio.setText("Inicio");
         botonInicio.setFocusable(false);
         botonInicio.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        botonInicio.setMaximumSize(new java.awt.Dimension(65, 35));
-        botonInicio.setMinimumSize(new java.awt.Dimension(65, 35));
-        botonInicio.setPreferredSize(new java.awt.Dimension(65, 35));
+        botonInicio.setMaximumSize(new java.awt.Dimension(40, 35));
+        botonInicio.setMinimumSize(new java.awt.Dimension(40, 35));
+        botonInicio.setPreferredSize(new java.awt.Dimension(40, 35));
         botonInicio.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(botonInicio);
 
         botonValidar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/validar.png"))); // NOI18N
         botonValidar.setText("Validar/Configurar");
         botonValidar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        botonValidar.setMaximumSize(new java.awt.Dimension(120, 35));
-        botonValidar.setMinimumSize(new java.awt.Dimension(120, 35));
-        botonValidar.setPreferredSize(new java.awt.Dimension(120, 35));
+        botonValidar.setMaximumSize(new java.awt.Dimension(30, 35));
+        botonValidar.setMinimumSize(new java.awt.Dimension(30, 35));
+        botonValidar.setPreferredSize(new java.awt.Dimension(30, 35));
         botonValidar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonValidarActionPerformed(evt);
@@ -337,9 +337,9 @@ public class VentanaConfiguracionAmbiente extends javax.swing.JInternalFrame {
         });
         jToolBar1.add(botonValidar);
 
-        progressBar.setMinimumSize(new java.awt.Dimension(65, 14));
+        progressBar.setMinimumSize(new java.awt.Dimension(10, 14));
         progressBar.setOpaque(true);
-        progressBar.setPreferredSize(new java.awt.Dimension(65, 14));
+        progressBar.setPreferredSize(new java.awt.Dimension(10, 14));
         jToolBar1.add(progressBar);
         jToolBar1.add(filler5);
 
