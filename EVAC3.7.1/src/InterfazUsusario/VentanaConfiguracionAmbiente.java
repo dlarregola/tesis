@@ -39,7 +39,7 @@ public class VentanaConfiguracionAmbiente extends javax.swing.JInternalFrame {
     String[] ambienteStrings = {"Muro", "Obstaculo", "Salida", "Fuego", "Combustible"};
     //CAMBIADO PARA EL CURSO DE LA PLATA 01/09/2018
     //String[] agenteStrings = {"SMC", "SMTE", "SPDE", "PEE", "SML"};
-    String[] agenteStrings = {"SMC", "SMTE", "SPDE"};
+    String[] agenteStrings = {"SMC", "SMTE", "SPDE","ASSS"};
     String[] sensorStrings = {"Densidad"}; //agregar sensor
     private Mapa mapaAmbiente;
     private ButtonGroup grupoBotones = new ButtonGroup();
@@ -64,7 +64,7 @@ public class VentanaConfiguracionAmbiente extends javax.swing.JInternalFrame {
         
         //CAMBIADO PARA EL CURSO DE LA PLATA 01/09/2018
         //for (int i = 0; i < 5; i++) {
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 4; i++) {
             comboAgentes.addItem(new Integer(i));
             agenteImagenes[i] = createImageIcon("/Recursos/" + agenteStrings[i]+ ".png");
             //agenteImagenes[i] = new javax.swing.ImageIcon(getClass().getResource("/Recursos/" + agenteStrings[i]+ ".png"));
@@ -145,13 +145,13 @@ public class VentanaConfiguracionAmbiente extends javax.swing.JInternalFrame {
             return this.comboAgentes.getSelectedIndex()+5;
         }
         if (this.botonSensores.isSelected()) {
-            return this.comboAgentes.getSelectedIndex()+10;
+            return this.comboSensores.getSelectedIndex()+11;
         }
         if (this.botonBorrar.isSelected()){
-            return(11);
+            return(12);
         }
         if(this.botonInicio.isSelected()){
-            return(12);
+            return(13);
         }
         return 0;
     }

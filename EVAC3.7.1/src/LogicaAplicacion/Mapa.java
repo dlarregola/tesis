@@ -58,6 +58,8 @@ public class Mapa extends Canvas{
         this.j = this.ratonY % tamanoAspecto;
         this.j = this.ratonY - this.j;
         this.y = this.j / tamanoAspecto - 1;
+        System.out.println("----------   Boton updatePerimetro   --------- \n");
+
         switch (this.matriz.getCelda(this.y, this.x).getEstado()) {
             case 0: 
             case 1: {
@@ -83,6 +85,8 @@ public class Mapa extends Canvas{
         this.j = this.ratonY % tamanoAspecto;
         this.j = this.ratonY - this.j;
         this.y = this.j / tamanoAspecto - 1;
+        System.out.println("----------   Boton updateInterior   --------- \n");
+
         switch (this.matriz.getCelda(this.y, this.x).getEstado()) {
             case 0: 
             case 2: {
@@ -132,6 +136,8 @@ public class Mapa extends Canvas{
         this.j = this.ratonY % tamanoAspecto;
         this.j = this.ratonY - this.j;
         this.y = this.j / tamanoAspecto - 1;
+        System.out.println("----------   Boton updateCombustion   --------- \n");
+
         switch (this.matriz.getCelda(this.y, this.x).getEstado()) {
             case 0: 
             case 2: 
@@ -157,6 +163,8 @@ public class Mapa extends Canvas{
         this.j = this.ratonY % tamanoAspecto;
         this.j = this.ratonY - this.j;
         this.y = this.j / tamanoAspecto - 1;
+        System.out.println("----------   Boton updateSalidas   --------- \n");
+
         switch (this.matriz.getCelda(this.y, this.x).getEstado()) {
             case 1: {
                 Proyecto.getProyecto().setCantidadSalidas(Proyecto.getProyecto().getCantidadSalidas() + 1);
@@ -185,6 +193,7 @@ public class Mapa extends Canvas{
         this.j = this.ratonY - this.j;
         this.y = this.j / tamanoAspecto - 1;
         g.setColor(Color.WHITE);
+        System.out.println("----------   Boton borrar --------- \n");
         switch (this.matriz.getCelda(this.y, this.x).getEstado()) {
             case 2: {
                 Proyecto.getProyecto().setProyectoValido(0);
@@ -217,6 +226,8 @@ public class Mapa extends Canvas{
         this.j = this.ratonY % tamanoAspecto;
         this.j = this.ratonY - this.j;
         this.y = this.j / tamanoAspecto - 1;
+        System.out.println("----------   Boton updateFuego   --------- \n");
+
         switch (this.matriz.getCelda(this.y, this.x).getEstado()) {
             case 0: 
             case 4: {
@@ -243,6 +254,8 @@ public class Mapa extends Canvas{
         this.j = this.ratonY % tamanoAspecto;
         this.j = this.ratonY - this.j;
         this.y = this.j / tamanoAspecto - 1;
+        System.out.println("----------   Boton updateSMC   --------- \n");
+
         switch (this.matriz.getCelda(this.y, this.x).getEstado()) {
             case 0: {
                 Proyecto.getProyecto().setCantidadPersonas(Proyecto.getProyecto().getCantidadPersonas()+1);
@@ -271,6 +284,8 @@ public class Mapa extends Canvas{
         this.j = this.ratonY % tamanoAspecto;
         this.j = this.ratonY - this.j;
         this.y = this.j / tamanoAspecto - 1;
+        System.out.println("----------   Boton updateSMTE--------- \n");
+
         switch (this.matriz.getCelda(this.y, this.x).getEstado()) {
             case 0: {
                 Proyecto.getProyecto().setCantidadPersonas(Proyecto.getProyecto().getCantidadPersonas()+1);
@@ -300,6 +315,8 @@ public class Mapa extends Canvas{
         this.j = this.ratonY % tamanoAspecto;
         this.j = this.ratonY - this.j;
         this.y = this.j / tamanoAspecto - 1;
+        System.out.println("----------   Boton updateSPDE   --------- \n");
+
         switch (this.matriz.getCelda(this.y, this.x).getEstado()) {
             case 0: {
                 Proyecto.getProyecto().setCantidadPersonas(Proyecto.getProyecto().getCantidadPersonas()+1);
@@ -326,6 +343,8 @@ public class Mapa extends Canvas{
         this.j = this.ratonY % tamanoAspecto;
         this.j = this.ratonY - this.j;
         this.y = this.j / tamanoAspecto - 1;
+        System.out.println("----------   Boton updatePEE   --------- \n");
+
         switch (this.matriz.getCelda(this.y, this.x).getEstado()) {
             case 0: {
                 Proyecto.getProyecto().setCantidadPersonas(Proyecto.getProyecto().getCantidadPersonas()+1);
@@ -351,6 +370,7 @@ public class Mapa extends Canvas{
         this.j = this.ratonY % tamanoAspecto;
         this.j = this.ratonY - this.j;
         this.y = this.j / tamanoAspecto - 1;
+        System.out.println("----------   Boton updateSML   --------- \n");
         switch (this.matriz.getCelda(this.y, this.x).getEstado()) {
             case 0: {
                 Proyecto.getProyecto().setCantidadPersonas(Proyecto.getProyecto().getCantidadPersonas()+1);
@@ -359,6 +379,32 @@ public class Mapa extends Canvas{
                 g.setColor(new Color(76,0,153));
                 g.fillOval(this.i + 1, this.j + 1, tamanoAspecto-2, tamanoAspecto-2);
                 this.matriz.getCelda(this.y, this.x).setAgente(new Agente(4));
+                this.matriz.getCelda(this.y, this.x).getAgente().setUbicacion(new Point(this.y, this.x));
+                this.matriz.getCelda(this.y, this.x).setEstado(6);
+                break;
+            }
+            default: {
+                JOptionPane.showMessageDialog(new JFrame(), "La celda debe ser 'Vacia'", "ERROR, SELECCIONE CELDA VALIDA", 1);
+            }
+        }
+    }
+
+    private void updateASSS (Graphics g) {
+        this.i = this.ratonX % tamanoAspecto;
+        this.i = this.ratonX - this.i;
+        this.x = this.i / tamanoAspecto - 1;
+        this.j = this.ratonY % tamanoAspecto;
+        this.j = this.ratonY - this.j;
+        this.y = this.j / tamanoAspecto - 1;
+        System.out.println("----------   Boton updateASSS   --------- \n");
+        switch (this.matriz.getCelda(this.y, this.x).getEstado()) {
+            case 0: {
+                Proyecto.getProyecto().setCantidadPersonas(Proyecto.getProyecto().getCantidadPersonas()+1);
+            }
+            case 6: {
+                g.setColor(new Color(125,52,121));
+                g.fillOval(this.i + 1, this.j + 1, tamanoAspecto-2, tamanoAspecto-2);
+                this.matriz.getCelda(this.y, this.x).setAgente(new Agente(5));
                 this.matriz.getCelda(this.y, this.x).getAgente().setUbicacion(new Point(this.y, this.x));
                 this.matriz.getCelda(this.y, this.x).setEstado(6);
                 break;
@@ -380,8 +426,9 @@ public class Mapa extends Canvas{
         switch (this.matriz.getCelda(this.y, this.x).getEstado()) {
             case 0:
             case 4: {
-
-                this.matriz.getCelda(this.y, this.x).setSensor(new Sensor(Proyecto.getProyecto().getPotenciaSensor(),this.x,this.y,101));
+                System.out.println("----------   Boton Densidad   --------- \n");
+                Sensor sens = new Sensor(Proyecto.getProyecto().getPotenciaSensor(),this.x,this.y,101);
+                this.matriz.getCelda(this.y, this.x).setSensor(sens);
                 Proyecto.getProyecto().addListSensores(this.matriz.getCelda(this.y, this.x).getSensor());
                 g.setColor(Color.green);
                 g.drawOval(this.i+1,this.j+1,5,5);
@@ -412,6 +459,7 @@ public class Mapa extends Canvas{
         p.y = this.y;
         switch (this.matriz.getCelda(this.y, this.x).getEstado()) {
             case 1: {
+                System.out.println("----------   Boton Inicio   --------- \n");
                 Proyecto.getProyecto().setPuntoInicio(p);
                 break;
             }
@@ -461,22 +509,22 @@ public class Mapa extends Canvas{
                     break;
                 }
                 case 8: {
-                    this.updatePEE(g);
+                    this.updateASSS(g);
                     break;
                 }
                 case 9:{
                     this.updateSML(g);
                     break;
                 }
-                case 10: {
+                case 11: {
                     this.updateDensidad(g);
                     break;
                 }
-                case 11: {
+                case 12: {
                     this.updateBorrar(g);
                     break;
                 }
-                case 12:{
+                case 13:{
                     this.updateInicio(g);
                     break;
                 }
@@ -621,6 +669,10 @@ public class Mapa extends Canvas{
                             }
                             if  (tipoAgente == 4){
                                 g.setColor(new Color(76,0,153));
+                                g.fillOval(i + 1, j + 1, tamanoAspecto-2, tamanoAspecto-2);
+                            }
+                            if  (tipoAgente == 5){
+                                g.setColor(new Color(125,52,121));
                                 g.fillOval(i + 1, j + 1, tamanoAspecto-2, tamanoAspecto-2);
                             }
                             if (this.matriz.getCelda(this.y, this.x).getNivelCombustibilidad() == 1) {

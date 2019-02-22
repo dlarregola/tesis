@@ -127,6 +127,10 @@ public class Agente {
                     this.comportamiento=new ComportamientoSalidaMasLejana();
                     break;
             }
+            case(5):{
+                this.comportamiento=new ComportamientoSalidaMasLejana();
+                break;
+            }
             default:{
                     this.comportamiento=new ComportamientoPropagacionEstadoEvacuacion();
                     break;

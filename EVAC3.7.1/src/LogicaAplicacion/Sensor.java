@@ -11,11 +11,11 @@ public class Sensor {
     private int cantidadAgentes;
     private Salida salidaMasCercana;
 
-    public Sensor(int potencia, int x, int y ,int tipo) {
+    public Sensor(int potencia, int columna, int fila ,int tipo) {
         this.potencia = potencia;
         this.ubicacion = new Point();
-        this.ubicacion.x = x;
-        this.ubicacion.y = y;
+        this.ubicacion.x = columna;
+        this.ubicacion.y = fila;
         this.tipo = tipo;
     }
 
