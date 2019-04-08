@@ -2,6 +2,7 @@ package LogicaAplicacion;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.LinkedList;
 
 public class Sensor {
 
@@ -9,9 +10,10 @@ public class Sensor {
     private Point ubicacion;
     private int tipo; // 100 sin sensor, 101 densidad, 102 fuego
     private int cantidadAgentes;
-    private Salida salidaMasCercana;
+    private int salidaMasCercana;
+    private LinkedList listaAgentes;
 
-    public Sensor(int potencia, int columna, int fila ,int tipo) {
+    public Sensor(int potencia, int fila, int columna ,int tipo) {
         this.potencia = potencia;
         this.ubicacion = new Point();
         this.ubicacion.x = columna;
@@ -58,5 +60,22 @@ public class Sensor {
 
     public void setCantidadAgentes(int cantidadAgentes) {
         this.cantidadAgentes = cantidadAgentes;
+    }
+
+    public int getSalidaMasCercana() {
+        return salidaMasCercana;
+    }
+
+    public void setSalidaMasCercana(int salidaMasCercana) {
+        this.salidaMasCercana = salidaMasCercana;
+    }
+
+    public LinkedList getListaAgentes() {
+        return listaAgentes;
+    }
+
+    public void setListaAgentes(LinkedList listaAgentes) {
+        this.cantidadAgentes = listaAgentes.size();
+        this.listaAgentes = listaAgentes;
     }
 }

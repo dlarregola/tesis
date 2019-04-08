@@ -12,7 +12,9 @@ import java.awt.Point;
  * @author Cristian
  */
 public class Agente {
-    
+
+    static private int listId = 0;
+    private int id = 0;
     private int daño;
     private int tiempoNoActualizacion;
     private int tiempoEvacuacion;
@@ -30,10 +32,13 @@ public class Agente {
     private Memoria memoria;
     //CRISTIAN 30/07/2018
     private int pasosDados;
+    private int salidaSugeridaSensor;
+
     // 0 - Comportamiento: SALIDA MAS CERCANA  (SMC) 
     // 1 - comportamiento: MEJOR SALIDA ESTIMADA (MSE)
     
     public Agente() {
+        this.id = this.listId++;
         this.daño = 0;
         this.tiempoNoActualizacion = 0;
         this.tiempoEvacuacion = 0;
@@ -54,13 +59,14 @@ public class Agente {
         this.tiempoInferencia = 0;
         this.salidaElegida = -1;
         this.desiciones = 0;
-        this.demoraReaccion=0;
+        this.demoraReaccion=10;
         //this.demoraReaccion=Utilidades.getRandom(200)+120;
         this.asignarComportamiento();
         this.memoria=new Memoria();
     }
 
     public Agente(int tipo) {
+        this.id = this.listId++;
         this.daño = 0;
         this.tiempoNoActualizacion = 0;
         this.tiempoEvacuacion = 0;
@@ -80,7 +86,7 @@ public class Agente {
         this.tiempoInferencia = 0;
         this.salidaElegida = -1;
         this.desiciones = 0;
-        this.demoraReaccion=0;
+        this.demoraReaccion=10;
         //this.demoraReaccion=Utilidades.getRandom(200)+120;
         this.asignarComportamiento();
         this.memoria=new Memoria();
@@ -88,6 +94,7 @@ public class Agente {
     
     
     public Agente(int daño,int tiempoNoActualizacion,int tiempoEvacuacion,Point ubicacion, Point destino,int respuesta,int velocidad,int contadorVelocidad,int tipo,int tiempoInferencia,int salidaElegida,int desiciones, int demoraReaccion) {
+        this.id = this.listId++;
         this.daño = daño;
         this.tiempoNoActualizacion = tiempoNoActualizacion;
         this.tiempoEvacuacion = tiempoEvacuacion;
@@ -128,7 +135,7 @@ public class Agente {
                     break;
             }
             case(5):{
-                this.comportamiento=new ComportamientoSalidaMasLejana();
+                this.comportamiento=new ComportamientoSalidaSugeridaSensor();
                 break;
             }
             default:{
@@ -269,5 +276,21 @@ public class Agente {
     //CRISTIAN 30/07/2018
     public void setPasosDados(int pasos){
         this.pasosDados=pasos;
+    }
+
+    public int getSalidaSugeridaSensor() {
+        return salidaSugeridaSensor;
+    }
+
+    public void setSalidaSugeridaSensor(int salidaSugeridaSensor) {
+        this.salidaSugeridaSensor = salidaSugeridaSensor;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

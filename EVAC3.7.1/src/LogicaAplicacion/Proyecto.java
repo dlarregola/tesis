@@ -43,6 +43,8 @@ public class Proyecto {
     private int cantidadSensores;
     private int potenciaSensor;
     private static final int potenciaConst =10;
+
+    private LinkedList nodosSalidas;
     
     //CRISTIAN 07/08/2018
     private int velocidadMinima;
@@ -65,6 +67,7 @@ public class Proyecto {
         this.ac = ac;
         this.proyectoValido=valido;
         this.salidas=new LinkedList();
+        this.nodosSalidas=new LinkedList();
         this.cantidadSensores = cantSensores;
         this.sensores = listSensores;
         this.potenciaSensor = potenciaSensores;
@@ -86,6 +89,7 @@ public class Proyecto {
         this.salidas=new LinkedList();
         this.cantidadSensores = 0;
         this.sensores = new LinkedList();
+        this.nodosSalidas=new LinkedList();
         this.potenciaSensor = potenciaConst;
     }
 
@@ -166,6 +170,7 @@ public class Proyecto {
                 notasProyecto = notasProyecto.substring(0, notasProyecto.length() - 3);
             }
 
+            LinkedList listaNodos = new LinkedList();
             
             AutomataCelular automataCelular = new AutomataCelular(alto, ancho);
             for (int i = 0; i < alto; ++i) {
@@ -177,6 +182,7 @@ public class Proyecto {
                     relleno = relleno.substring(relleno.indexOf("[") + 1, relleno.indexOf("]"));
                     StringTokenizer filtroACE = new StringTokenizer(relleno, ",");
                     int estadoAC = new Integer(filtroACE.nextToken());
+
                     int velocidadAC = new Integer(filtroACE.nextToken());
                     int combustionAC = new Integer(filtroACE.nextToken());
                     Double nivelHumoAC = new Double(filtroACE.nextToken());
@@ -194,6 +200,9 @@ public class Proyecto {
                         agente.setUbicacion(new Point(i,j));
                         celda.setAgente(agente);
                     }
+                    if(estadoAC == 5){
+                        listaNodos.add(new Point(j,i));
+                    }
                     automataCelular.setCelda(i, j, celda);
                 }
             }
@@ -210,6 +219,7 @@ public class Proyecto {
             proyectoActual.setVelocidadMaxima(velMaxima);
             proyectoActual.setTiempoReaccionMinimo(reaccionMinima);
             proyectoActual.setTiempoReaccionMaximo(reaccionMaxima);
+            proyectoActual.setNodosSalidas(listaNodos);
 
         }
         catch (HeadlessException | IOException | NumberFormatException ex) {
@@ -279,9 +289,10 @@ public class Proyecto {
             else{
                 notasProyecto = notasProyecto.substring(0, notasProyecto.length() - 3);
             }
-            
-            
-            AutomataCelular automataCelular = new AutomataCelular(alto, ancho);
+
+             LinkedList listaNodos = new LinkedList();
+
+             AutomataCelular automataCelular = new AutomataCelular(alto, ancho);
             for (int i = 0; i < alto; ++i) {
                 leerArchivo = br.readLine();
                 StringTokenizer filtroAC = new StringTokenizer(leerArchivo, "/");
@@ -291,6 +302,7 @@ public class Proyecto {
                     relleno = relleno.substring(relleno.indexOf("[") + 1, relleno.indexOf("]"));
                     StringTokenizer filtroACE = new StringTokenizer(relleno, ",");
                     int estadoAC = new Integer(filtroACE.nextToken());
+
                     int velocidadAC = new Integer(filtroACE.nextToken());
                     int combustionAC = new Integer(filtroACE.nextToken());
                     Double nivelHumoAC = new Double(filtroACE.nextToken());
@@ -309,6 +321,9 @@ public class Proyecto {
                         agente.setUbicacion(new Point(i,j));
                         celda.setAgente(agente);
                     }
+                    if(estadoAC == 5){
+                        listaNodos.add(new Point(j,i));
+                    }
                     automataCelular.setCelda(i, j, celda);
                 }
             }
@@ -321,7 +336,9 @@ public class Proyecto {
             proyectoActual.setVelocidadMaxima(velMaxima);
             proyectoActual.setTiempoReaccionMinimo(reaccionMinima);
             proyectoActual.setTiempoReaccionMaximo(reaccionMaxima);
-          }
+            proyectoActual.setNodosSalidas(listaNodos);
+
+         }
         }
         catch (HeadlessException | IOException | NumberFormatException ex) {
           System.out.println("ERROR EN APERTURA DE ARCHIVO");
@@ -359,6 +376,8 @@ public class Proyecto {
                 }
                 notasProyecto = notasProyecto.substring(0, notasProyecto.length() - 3);
                 AutomataCelular guardadoAC = new AutomataCelular(alto, ancho);
+                LinkedList listaNodos = new LinkedList();
+
                 for (int i = 0; i < alto; ++i) {
                     leerArchivo = br.readLine();
                     StringTokenizer filtroAC = new StringTokenizer(leerArchivo, "/");
@@ -385,10 +404,15 @@ public class Proyecto {
                             Agente agente=new Agente(tipoAgente);
                             estado.setAgente(agente);
                         }
+                        if(estadoAC == 5){
+                            listaNodos.add(new Point(j,i));
+                        }
                         guardadoAC.setCelda(i, j, estado);
                     }
                 }
                 proyectoActual = new Proyecto(tamañox, tamañoy, visualizacion, propagacionHumo, propagacionFuego, personas, salidas, valido, guardadoAC, nombreProyecto, notasProyecto,cantSensores,listSensores,potenciaSensores);
+                proyectoActual.setNodosSalidas(listaNodos);
+
             }
         }
         catch (HeadlessException | IOException | NumberFormatException ex) {
@@ -653,5 +677,24 @@ public class Proyecto {
 
     public void setPotenciaSensor(int potenciaSensor) {
         this.potenciaSensor = potenciaSensor;
+    }
+
+    public LinkedList getNodosSalidas() {
+        return nodosSalidas;
+    }
+
+    public void setNodosSalidas(LinkedList nodosSalidas) {
+        this.nodosSalidas = nodosSalidas;
+    }
+
+    public void addNodoSalida(Point p){
+
+        if(this.nodosSalidas.indexOf(p) == -1){
+            this.nodosSalidas.add(p);
+        }
+
+    }
+    public void deleteNodoSalida(Point p){
+        this.nodosSalidas.remove(p);
     }
 }

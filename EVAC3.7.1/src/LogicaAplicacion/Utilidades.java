@@ -91,7 +91,12 @@ public class Utilidades {
         }
         return contador;
     }
-    
+
+    /*public static void construirSalidasNuevo(){
+
+    }*/
+
+
     public static void construirSalidas(){
         AutomataCelular matriz = Proyecto.getProyecto().getAc();
         Point p = new Point();
@@ -109,6 +114,7 @@ public class Utilidades {
         actual.y = p.y;
         anterior.x = -10;
         anterior.y = -10;
+        LinkedList nodos = new LinkedList(Proyecto.getProyecto().getNodosSalidas());
         ortogonales = devolverOrtogonales(p);
         if (matriz.getCelda(p.y, p.x).getEstado() == 1) {
             while (condicion) {
@@ -135,6 +141,9 @@ public class Utilidades {
                             Proyecto.getProyecto().getSalidas().add(salida);
                             ((Salida)Proyecto.getProyecto().getSalidas().getLast()).setNumeroSalida(Proyecto.getProyecto().getSalidas().size());
                         }
+                    }
+                    if(nodos.indexOf(actual) >= 0){
+                        nodos.remove(actual);
                     }
                     anterior.x = actual.x;
                     anterior.y = actual.y;
@@ -163,6 +172,9 @@ public class Utilidades {
                             ((Salida)Proyecto.getProyecto().getSalidas().getLast()).setNumeroSalida(Proyecto.getProyecto().getSalidas().size());
                         }
                     }
+                    if(nodos.indexOf(actual) >= 0){
+                        nodos.remove(actual);
+                    }
                     anterior.x = actual.x;
                     anterior.y = actual.y;
                     actual.x = ortogonales[2].x;
@@ -189,6 +201,9 @@ public class Utilidades {
                             Proyecto.getProyecto().getSalidas().add(salida);
                             ((Salida)Proyecto.getProyecto().getSalidas().getLast()).setNumeroSalida(Proyecto.getProyecto().getSalidas().size());
                         }
+                    }
+                    if(nodos.indexOf(actual) >= 0){
+                        nodos.remove(actual);
                     }
                     anterior.x = actual.x;
                     anterior.y = actual.y;
@@ -217,12 +232,19 @@ public class Utilidades {
                             ((Salida)Proyecto.getProyecto().getSalidas().getLast()).setNumeroSalida(Proyecto.getProyecto().getSalidas().size());
                         }
                     }
+                    if(nodos.indexOf(actual) >= 0){
+                        nodos.remove(actual);
+                    }
                     anterior.x = actual.x;
                     anterior.y = actual.y;
                     actual.x = ortogonales[0].x;
                     actual.y = ortogonales[0].y;
                 }
-                if (p.x == actual.x && p.y == actual.y) {
+               /* if (p.x == actual.x && p.y == actual.y) {
+                    condicion = false;
+                }*/
+
+                if(nodos.size() == 0){
                     condicion = false;
                 }
                 visitados.add(new Point(actual.x, actual.y));
