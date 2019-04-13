@@ -170,7 +170,6 @@ public class Mapa extends Canvas{
                 g.setColor(Color.LIGHT_GRAY);
                 this.matriz.getCelda(this.y, this.x).setEstado(5);
                 g.fillRect(this.i + 1, this.j + 1, tamanoAspecto-1, tamanoAspecto-1);
-                System.out.println("agrego el nodo "+ this.j+ "  "+this.i);
                 Proyecto.getProyecto().addNodoSalida(new Point(this.j,this.i));
                 Proyecto.getProyecto().setProyectoValido(0);
                 break;

@@ -1,6 +1,7 @@
 
 package LogicaAplicacion;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 
 public class Celda {
@@ -122,6 +123,7 @@ public class Celda {
     public void setDistanciasSalidas(LinkedList distanciasSalidas) {
         this.distanciasSalidas = distanciasSalidas;
     }
+
 
     public int getContadorTransitoAgentes() {
         return contadorTransitoAgentes;

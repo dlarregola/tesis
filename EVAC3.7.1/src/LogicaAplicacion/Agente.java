@@ -63,6 +63,7 @@ public class Agente {
         //this.demoraReaccion=Utilidades.getRandom(200)+120;
         this.asignarComportamiento();
         this.memoria=new Memoria();
+        this.salidaSugeridaSensor = -1;
     }
 
     public Agente(int tipo) {
@@ -90,6 +91,7 @@ public class Agente {
         //this.demoraReaccion=Utilidades.getRandom(200)+120;
         this.asignarComportamiento();
         this.memoria=new Memoria();
+        this.salidaSugeridaSensor = -1;
     }
     
     
@@ -110,6 +112,7 @@ public class Agente {
         this.demoraReaccion=demoraReaccion;
         this.asignarComportamiento();
         this.memoria=new Memoria();
+        this.salidaSugeridaSensor = -1;
     }
     
     private void asignarComportamiento(){ //AQUI SE DEBE COLOCAR LA ASIGNACION DEL NUEVO COMPORTAMIENTO
