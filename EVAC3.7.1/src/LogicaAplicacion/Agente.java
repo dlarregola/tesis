@@ -32,7 +32,7 @@ public class Agente {
     private Memoria memoria;
     //CRISTIAN 30/07/2018
     private int pasosDados;
-    private int salidaSugeridaSensor;
+    private DistanciaSalida salidaSugeridaSensor;
 
     // 0 - Comportamiento: SALIDA MAS CERCANA  (SMC) 
     // 1 - comportamiento: MEJOR SALIDA ESTIMADA (MSE)
@@ -63,7 +63,7 @@ public class Agente {
         //this.demoraReaccion=Utilidades.getRandom(200)+120;
         this.asignarComportamiento();
         this.memoria=new Memoria();
-        this.salidaSugeridaSensor = -1;
+        this.salidaSugeridaSensor = new DistanciaSalida(-1,5000.0);
     }
 
     public Agente(int tipo) {
@@ -91,7 +91,7 @@ public class Agente {
         //this.demoraReaccion=Utilidades.getRandom(200)+120;
         this.asignarComportamiento();
         this.memoria=new Memoria();
-        this.salidaSugeridaSensor = -1;
+        this.salidaSugeridaSensor = new DistanciaSalida(-1,5000.0);
     }
     
     
@@ -112,7 +112,7 @@ public class Agente {
         this.demoraReaccion=demoraReaccion;
         this.asignarComportamiento();
         this.memoria=new Memoria();
-        this.salidaSugeridaSensor = -1;
+        this.salidaSugeridaSensor =new DistanciaSalida(-1,5000.0);
     }
     
     private void asignarComportamiento(){ //AQUI SE DEBE COLOCAR LA ASIGNACION DEL NUEVO COMPORTAMIENTO
@@ -281,11 +281,11 @@ public class Agente {
         this.pasosDados=pasos;
     }
 
-    public int getSalidaSugeridaSensor() {
+    public DistanciaSalida getSalidaSugeridaSensor() {
         return salidaSugeridaSensor;
     }
 
-    public void setSalidaSugeridaSensor(int salidaSugeridaSensor) {
+    public void setSalidaSugeridaSensor(DistanciaSalida salidaSugeridaSensor) {
         this.salidaSugeridaSensor = salidaSugeridaSensor;
     }
 

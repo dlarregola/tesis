@@ -70,6 +70,7 @@ public class ThreadSimulacion extends Thread{
     Map <Integer,LinkedList> mapaAgentePorSalida;
 
     private boolean calcularDistanciaSalidasSensor = true;
+    private boolean reCalcularDistanciaSalidasSensor = false;
     private int salidasDisponibles,salidasDisponiblesAnteriores; //Esto lo voy a usar porque si
 
 
@@ -100,26 +101,7 @@ public class ThreadSimulacion extends Thread{
         }
         mapaAgentePorSalida =new HashMap <Integer,LinkedList>();
         factorSalidas = new HashMap<Integer, Map <String,Integer>>();
-
-        Iterator<Salida> it = Proyecto.getProyecto().getSalidas().iterator();
-        int totalAgentes = Proyecto.getProyecto().getCantidadPersonas();
-        int cantidadSalidas = Proyecto.getProyecto().getCantidadSalidas();
-        salidasDisponibles = Proyecto.getProyecto().getSalidas().size();
-        salidasDisponiblesAnteriores = salidasDisponibles;
-        while(it.hasNext()){
-            Salida sal = it.next();
-
-
-            Map <String,Integer> aux = new HashMap<String, Integer>();
-            aux.put("factorDesalojo",sal.getNodos().size());
-            //calculo la cantidad de agentes que tengo q mandar a cada puerta Inicialemnte
-            int cantAgentesXPuerta = (int) Math.ceil((Double.valueOf(sal.getNodos().size()) * Double.valueOf(totalAgentes)/Double.valueOf(cantidadSalidas)));
-            aux.put("cantidadAgentesPorPuerta",cantAgentesXPuerta);
-            aux.put("agentesAsignados",0);
-
-            factorSalidas.put(sal.getNumeroSalida(),aux);
-            mapaAgentePorSalida.put(sal.getNumeroSalida(),new LinkedList());
-        }
+        inicializarFactorDesalojo();
 
     }
     
@@ -132,10 +114,7 @@ public class ThreadSimulacion extends Thread{
         this.cantidadIndividuosEvacuaron=0;
         this.cantidadIndividuosCaidos=0;
         this.recalcular = false;
-        if(this.calcularDistanciaSalidasSensor){
-            this.asignarSalidasSugeridasSensor();
-            this.calcularDistanciaSalidasSensor = false;
-        }
+
         this.timeSteps = 0;
         this.tiempoEvacuacionPersona = 0.0f;
         this.espacioEvacuacionPersona = 0.0f;
@@ -403,6 +382,8 @@ public class ThreadSimulacion extends Thread{
         if (this.isRecalcular()) { // DESPUES DE APLICAR LAS REGLAS DE FUEGO, SI ES NECESARIO SE DEBEN RECALCULAR LAS DISTANCIAS 
                 Utilidades.recalcularDistancias(this.ac3);//HACIAS CADA UNA DE LAS SALIDAS
                 this.setRecalcular(false);
+                this.calcularDistanciaSalidasSensor = true;
+                this.reCalcularDistanciaSalidasSensor = true;
         }
 
         //TODO: Llamar metodo sobre la lista de sensores que calcule
@@ -411,8 +392,36 @@ public class ThreadSimulacion extends Thread{
 
 
         //Esto lo tengo que llamar solo si cambian la cantidad de salidas es decir
-        if(this.calcularDistanciaSalidasSensor) {
+        if(this.calcularDistanciaSalidasSensor){
             this.asignarSalidasSugeridasSensor();
+            this.calcularDistanciaSalidasSensor = false;
+            this.reCalcularDistanciaSalidasSensor = false;
+
+        }
+
+    }
+
+    private void inicializarFactorDesalojo(){
+
+        Iterator<Salida> it = Proyecto.getProyecto().getSalidas().iterator();
+        int totalAgentes = Proyecto.getProyecto().getCantidadPersonas();
+        int cantidadSalidas = Proyecto.getProyecto().getCantidadSalidas();
+        salidasDisponibles = Proyecto.getProyecto().getSalidas().size();
+        salidasDisponiblesAnteriores = salidasDisponibles;
+
+
+        while(it.hasNext()){
+            Salida sal = it.next();
+
+            Map <String,Integer> aux = new HashMap<String, Integer>();
+            aux.put("factorDesalojo",sal.getNodos().size());
+            //calculo la cantidad de agentes que tengo q mandar a cada puerta Inicialemnte
+            int cantAgentesXPuerta = (int) Math.ceil((Double.valueOf(sal.getNodos().size()) * Double.valueOf(totalAgentes)/Double.valueOf(cantidadSalidas)));
+            aux.put("cantidadAgentesPorPuerta",cantAgentesXPuerta);
+            aux.put("agentesAsignados",0);
+
+            factorSalidas.put(sal.getNumeroSalida(),aux);
+            mapaAgentePorSalida.put(sal.getNumeroSalida(),new LinkedList());
         }
 
     }
@@ -420,13 +429,14 @@ public class ThreadSimulacion extends Thread{
     private void asignarSalidasSugeridasSensor(){
         //Necesito mantener la intencion (cantidad de agentes que envio a cada puerta):
         //Guardo por cada puerta cuantos agente envio a dicha puerta
-       // this.ordenarSalidasCercanasSensor();
+      //  inicializarFactorDesalojo();
+
         System.out.println("agentes por salida "+ this.mapaAgentePorSalida);
-        this.calcularFactorDesalojoCadaPuerta();
+
         this.calcularDensidadSensores();
         this.distribuirAgentesEntrePuertas();
-        //this.asignarSalidaAgente();
-        this.calcularFactorDesalojoCadaPuerta();
+
+        //this.calcularFactorDesalojoCadaPuerta();
         System.out.println("agentes por salida actualizado "+ this.mapaAgentePorSalida);
     }
 
@@ -438,7 +448,15 @@ public class ThreadSimulacion extends Thread{
             Iterator<Agente> itAgentes = sensor.getListaAgentes().iterator();
             while (itAgentes.hasNext()){
                 Agente ag = itAgentes.next();
-                if(ag.getSalidaSugeridaSensor() == -1 ) {
+                //Si tengo q recalcular porque actualizo el fuego
+                // Y la salida sugerida por el sensor que tenia previamente asignada se bloqueo elijo una nueva salida.
+                if(this.reCalcularDistanciaSalidasSensor){
+                    if(checkDistanciaSalida(ag.getSalidaSugeridaSensor().getSalida(),sensor.getSalidasPorDistancia())){
+                        ag.setSalidaSugeridaSensor(new DistanciaSalida(-1,-1.0));
+                    }
+                }
+
+                if(ag.getSalidaSugeridaSensor().getSalida() == -1 ) {
                     ag.setSalidaSugeridaSensor(this.asignarSalidaAgente(sensor.getSalidasPorDistancia(), ag.getId()));
                 }
             }
@@ -446,17 +464,52 @@ public class ThreadSimulacion extends Thread{
         }
     }
 
-    private int asignarSalidaAgente(ArrayList<DistanciaSalida> listSalidasSensor,int idAgente){
-        int sSS = 0;
+    private boolean checkDistanciaSalida(int idSalida,ArrayList<DistanciaSalida> listSalidasSensor ){
         Iterator<DistanciaSalida> itSalidas = listSalidasSensor.iterator();
-        while(itSalidas.hasNext()){
-            int salida = itSalidas.next().getSalida();
-            if(this.factorSalidas.get(salida).get("agentesAsignados") < this.factorSalidas.get(salida).get("cantidadAgentesPorPuerta")){
-                this.factorSalidas.get(salida).put("agentesAsignados",this.factorSalidas.get(salida).get("agentesAsignados")+1);
-                sSS = salida;
-                this.mapaAgentePorSalida.get(salida).add(idAgente);
-                break;
+        while(itSalidas.hasNext()) {
+            DistanciaSalida salida = itSalidas.next();
+            if (salida.getSalida() == idSalida && salida.getDistancia().compareTo(-1.0) <= 0) {
+                return true;
             }
+        }
+
+
+        return false;
+
+    }
+
+    private DistanciaSalida asignarSalidaAgente(ArrayList<DistanciaSalida> listSalidasSensor,int idAgente){
+        DistanciaSalida sSS = new DistanciaSalida(-1,5000.0);
+        Iterator<DistanciaSalida> itSalidas = listSalidasSensor.iterator();
+        boolean flagSalidasBloqueadas = false;
+        int posibleSalida = -1;
+        Double distPosibleSalida = 5000.0;
+        while(itSalidas.hasNext()){
+            DistanciaSalida salida = itSalidas.next();
+            if(salida.getDistancia().compareTo(-1.0) > 0 &&
+                    this.factorSalidas.get(salida.getSalida()).get("agentesAsignados") < this.factorSalidas.get(salida.getSalida()).get("cantidadAgentesPorPuerta")){
+
+                this.factorSalidas.get(salida.getSalida()).put("agentesAsignados",this.factorSalidas.get(salida.getSalida()).get("agentesAsignados")+1);
+                sSS.setSalida(salida.getSalida());
+                sSS.setDistancia(salida.getDistancia());
+                this.mapaAgentePorSalida.get(salida.getSalida()).add(idAgente);
+                break;
+            } else if(salida.getDistancia().compareTo(-1.0) > 0 &&
+                    this.factorSalidas.get(salida.getSalida()).get("agentesAsignados") >= this.factorSalidas.get(salida.getSalida()).get("cantidadAgentesPorPuerta")){
+                flagSalidasBloqueadas = true;
+                posibleSalida = salida.getSalida();
+                distPosibleSalida = salida.getDistancia();
+            }
+        }
+
+
+        if(sSS.getSalida() == -1 && flagSalidasBloqueadas){
+            this.factorSalidas.get(posibleSalida).put("cantidadAgentesPorPuerta",this.factorSalidas.get(posibleSalida).get("cantidadAgentesPorPuerta")+1);
+            this.factorSalidas.get(posibleSalida).put("agentesAsignados",this.factorSalidas.get(posibleSalida).get("agentesAsignados")+1);
+            this.mapaAgentePorSalida.get(posibleSalida).add(idAgente);
+            sSS.setSalida(posibleSalida);
+            sSS.setDistancia(distPosibleSalida);
+
         }
 
 
@@ -498,7 +551,7 @@ public class ThreadSimulacion extends Thread{
             LinkedList vecinos = vecinosAgentesRadio(y,x,cuadradosAncho,cuadradosAlto,potenciaSensor,this.ac1);
 
             this.ac1.getCelda(y,x).getSensor().setListaAgentes(vecinos);
-
+            /*
             System.out.println("\n********** ");
             System.out.println("ID SENSOR: "+ proy.getAc().getCelda(y,x).getSensor().getId()+"\n" +
                     "vecinos "+ this.ac1.getCelda(y,x).getSensor().getCantidadAgentes()  +
@@ -507,6 +560,7 @@ public class ThreadSimulacion extends Thread{
             this.ac1.getCelda(y,x).getSensor().printDistanciaSalidas();
             this.ac1.getCelda(y,x).getSensor().printAgentes();
             System.out.println("\n**********");
+            */
 
         }
 
