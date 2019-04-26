@@ -70,7 +70,6 @@ public class ThreadSimulacion extends Thread{
     Map <Integer,LinkedList> mapaAgentePorSalida;
 
     private boolean calcularDistanciaSalidasSensor = true;
-    private boolean reCalcularDistanciaSalidasSensor = false;
     private int salidasDisponibles,salidasDisponiblesAnteriores; //Esto lo voy a usar porque si
 
 
@@ -383,7 +382,6 @@ public class ThreadSimulacion extends Thread{
                 Utilidades.recalcularDistancias(this.ac3);//HACIAS CADA UNA DE LAS SALIDAS
                 this.setRecalcular(false);
                 this.calcularDistanciaSalidasSensor = true;
-                this.reCalcularDistanciaSalidasSensor = true;
         }
 
         //TODO: Llamar metodo sobre la lista de sensores que calcule
@@ -392,12 +390,11 @@ public class ThreadSimulacion extends Thread{
 
 
         //Esto lo tengo que llamar solo si cambian la cantidad de salidas es decir
-        if(this.calcularDistanciaSalidasSensor){
+//        if(this.calcularDistanciaSalidasSensor){
             this.asignarSalidasSugeridasSensor();
             this.calcularDistanciaSalidasSensor = false;
-            this.reCalcularDistanciaSalidasSensor = false;
 
-        }
+  //      }
 
     }
 
@@ -450,7 +447,7 @@ public class ThreadSimulacion extends Thread{
                 Agente ag = itAgentes.next();
                 //Si tengo q recalcular porque actualizo el fuego
                 // Y la salida sugerida por el sensor que tenia previamente asignada se bloqueo elijo una nueva salida.
-                if(this.reCalcularDistanciaSalidasSensor){
+                if(ag.getSalidaSugeridaSensor().getSalida() != -1 ){
                     if(checkDistanciaSalida(ag.getSalidaSugeridaSensor().getSalida(),sensor.getSalidasPorDistancia())){
                         ag.setSalidaSugeridaSensor(new DistanciaSalida(-1,-1.0));
                     }

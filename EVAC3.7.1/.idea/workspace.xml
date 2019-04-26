@@ -21,15 +21,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VentanaConfiguracionAmbiente.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/InterfazUsusario/VentanaConfiguracionAmbiente.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1104">
-              <caret line="103" column="86" selection-start-line="103" selection-start-column="68" selection-end-line="103" selection-end-column="86" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Celda.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Celda.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -48,7 +39,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ComportamientoSalidaSugeridaSensor.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ComportamientoSalidaSugeridaSensor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/ComportamientoSalidaSugeridaSensor.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="344">
@@ -79,11 +70,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ThreadSimulacion.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Sensor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Sensor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="93" selection-start-line="93" selection-end-line="93" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2333#2334#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ThreadSimulacion.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/ThreadSimulacion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="488" column="56" lean-forward="true" selection-start-line="488" selection-start-column="15" selection-end-line="488" selection-end-column="56" />
+            <state relative-caret-position="450">
+              <caret line="522" column="24" lean-forward="true" selection-start-line="522" selection-start-column="24" selection-end-line="522" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#8259#8260#0" expanded="true" />
@@ -99,8 +103,8 @@
       <file leaf-file-name="Utilidades.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Utilidades.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="258" column="43" lean-forward="true" selection-start-line="258" selection-start-column="43" selection-end-line="258" selection-end-column="43" />
+            <state relative-caret-position="179">
+              <caret line="25" column="37" lean-forward="true" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
               <folding>
                 <element signature="e#23310#23319#0" expanded="true" />
               </folding>
@@ -111,11 +115,12 @@
       <file leaf-file-name="Agente.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Agente.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="114" column="66" selection-start-line="114" selection-start-column="66" selection-end-line="114" selection-end-column="66" />
+            <state relative-caret-position="373">
+              <caret line="292" selection-start-line="292" selection-end-line="292" />
               <folding>
                 <element signature="e#7973#7974#0" expanded="true" />
                 <element signature="e#8016#8017#0" expanded="true" />
+                <element signature="e#8200#8201#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -178,8 +183,8 @@
         <option value="$PROJECT_DIR$/src/LogicaAplicacion/ComportamientoSalidaMejorTiempo.java" />
         <option value="$PROJECT_DIR$/src/LogicaAplicacion/Proyecto.java" />
         <option value="$PROJECT_DIR$/src/LogicaAplicacion/Agente.java" />
-        <option value="$PROJECT_DIR$/src/LogicaAplicacion/ThreadSimulacion.java" />
         <option value="$PROJECT_DIR$/src/LogicaAplicacion/ComportamientoSalidaSugeridaSensor.java" />
+        <option value="$PROJECT_DIR$/src/LogicaAplicacion/ThreadSimulacion.java" />
       </list>
     </option>
   </component>
@@ -189,9 +194,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -342,15 +348,15 @@
       <workItem from="1550681349124" duration="12303000" />
       <workItem from="1551384078520" duration="952000" />
       <workItem from="1551883440915" duration="3173000" />
-      <workItem from="1552414119281" duration="74130000" />
+      <workItem from="1552414119281" duration="76736000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132228000" />
+    <option name="totallyTimeSpent" value="134834000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -363,11 +369,11 @@
       <window_info anchor="right" id="Maven Projects" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49930555" weight="0.2806604" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49930555" visible="true" weight="0.29638854" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22847222" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22847222" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32900944" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -375,7 +381,7 @@
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.3101415" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3101415" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -391,21 +397,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LogicaAplicacion/ThreadSimulacion.java</url>
-          <line>506</line>
-          <properties />
-          <option name="timeStamp" value="113" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LogicaAplicacion/ThreadSimulacion.java</url>
-          <line>382</line>
-          <properties />
-          <option name="timeStamp" value="118" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="119" />
+      <option name="time" value="120" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -711,16 +703,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Sensor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/ComportamientoSalidaMasCercana.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
@@ -739,17 +721,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="316" column="12" lean-forward="true" selection-start-line="316" selection-start-column="12" selection-end-line="316" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Agente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="114" column="66" selection-start-line="114" selection-start-column="66" selection-end-line="114" selection-end-column="66" />
-          <folding>
-            <element signature="e#7973#7974#0" expanded="true" />
-            <element signature="e#8016#8017#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -786,12 +757,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Utilidades.java">
+    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/ComportamientoSalidaSugeridaSensor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="258" column="43" lean-forward="true" selection-start-line="258" selection-start-column="43" selection-end-line="258" selection-end-column="43" />
+        <state relative-caret-position="344">
+          <caret line="32" column="98" selection-start-line="32" selection-start-column="98" selection-end-line="32" selection-end-column="98" />
           <folding>
-            <element signature="e#23310#23319#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -810,10 +781,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Utilidades.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="25" column="37" lean-forward="true" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+          <folding>
+            <element signature="e#23310#23319#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Sensor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="93" selection-start-line="93" selection-end-line="93" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2333#2334#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Agente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="292" selection-start-line="292" selection-end-line="292" />
+          <folding>
+            <element signature="e#7973#7974#0" expanded="true" />
+            <element signature="e#8016#8017#0" expanded="true" />
+            <element signature="e#8200#8201#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/ThreadSimulacion.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="488" column="56" lean-forward="true" selection-start-line="488" selection-start-column="15" selection-end-line="488" selection-end-column="56" />
+        <state relative-caret-position="450">
+          <caret line="522" column="24" lean-forward="true" selection-start-line="522" selection-start-column="24" selection-end-line="522" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#8259#8260#0" expanded="true" />
@@ -821,16 +825,6 @@
             <element signature="e#8350#8351#0" expanded="true" />
             <element signature="e#8394#8395#0" expanded="true" />
             <element signature="e#20530#20547#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/ComportamientoSalidaSugeridaSensor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="32" column="98" selection-start-line="32" selection-start-column="98" selection-end-line="32" selection-end-column="98" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
