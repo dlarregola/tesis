@@ -486,6 +486,7 @@ public class Utilidades {
                 celda.setDistanciasSalidas(copiarDistancias(origen.getCelda(i,j).getDistanciasSalidas()));
                 if(origen.getCelda(i,j).hayAgente()){
                     celda.setAgente(copiarAgente(origen.getCelda(i,j).getAgente()));
+                    celda.getAgente().setSalidaSugeridaSensor(new DistanciaSalida(-1,5000.0));
                 }
                 ac.setCelda(i, j, celda);
             }

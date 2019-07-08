@@ -120,6 +120,9 @@ public class ThreadSimulacion extends Thread{
         this.tiempoExposicionPersona = 0.0f;
         this.contadorHumo = Proyecto.getProyecto().getPropagacionHumo();
         this.contadorFuego = Proyecto.getProyecto().getPropagacionFuego();
+        mapaAgentePorSalida =new HashMap <Integer,LinkedList>();
+        factorSalidas = new HashMap<Integer, Map <String,Integer>>();
+        inicializarFactorDesalojo();
         if (this.ventana==0) {
             VentanaAnimacion.getVentanaAnimacion().getMapa().paint(VentanaAnimacion.getVentanaAnimacion().getMapa().getGraphics());
             VentanaAnimacion.getVentanaAnimacion().getMapaCalor().paint(VentanaAnimacion.getVentanaAnimacion().getMapaCalor().getGraphics());
@@ -428,13 +431,13 @@ public class ThreadSimulacion extends Thread{
         //Guardo por cada puerta cuantos agente envio a dicha puerta
       //  inicializarFactorDesalojo();
 
-        System.out.println("agentes por salida "+ this.mapaAgentePorSalida);
+//        System.out.println("agentes por salida "+ this.mapaAgentePorSalida);
 
         this.calcularDensidadSensores();
         this.distribuirAgentesEntrePuertas();
 
         //this.calcularFactorDesalojoCadaPuerta();
-        System.out.println("agentes por salida actualizado "+ this.mapaAgentePorSalida);
+        //System.out.println("agentes por salida actualizado "+ this.mapaAgentePorSalida);
     }
 
     private void distribuirAgentesEntrePuertas(){

@@ -41,8 +41,9 @@ public class Proyecto {
     private LinkedList salidas;
     private LinkedList sensores;
     private int cantidadSensores;
-    private int potenciaSensor;
-    private static final int potenciaConst =5;
+
+                int potenciaSensor;
+    private static final int potenciaConst =10;
 
     private LinkedList nodosSalidas;
     
