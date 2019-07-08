@@ -120,6 +120,9 @@ public class ThreadSimulacion extends Thread{
         this.tiempoExposicionPersona = 0.0f;
         this.contadorHumo = Proyecto.getProyecto().getPropagacionHumo();
         this.contadorFuego = Proyecto.getProyecto().getPropagacionFuego();
+        mapaAgentePorSalida =new HashMap <Integer,LinkedList>();
+        factorSalidas = new HashMap<Integer, Map <String,Integer>>();
+        inicializarFactorDesalojo();
         if (this.ventana==0) {
             VentanaAnimacion.getVentanaAnimacion().getMapa().paint(VentanaAnimacion.getVentanaAnimacion().getMapa().getGraphics());
             VentanaAnimacion.getVentanaAnimacion().getMapaCalor().paint(VentanaAnimacion.getVentanaAnimacion().getMapaCalor().getGraphics());
