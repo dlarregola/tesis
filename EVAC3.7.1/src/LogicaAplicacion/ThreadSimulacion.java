@@ -428,13 +428,13 @@ public class ThreadSimulacion extends Thread{
         //Guardo por cada puerta cuantos agente envio a dicha puerta
       //  inicializarFactorDesalojo();
 
-        System.out.println("agentes por salida "+ this.mapaAgentePorSalida);
+//        System.out.println("agentes por salida "+ this.mapaAgentePorSalida);
 
         this.calcularDensidadSensores();
         this.distribuirAgentesEntrePuertas();
 
         //this.calcularFactorDesalojoCadaPuerta();
-        System.out.println("agentes por salida actualizado "+ this.mapaAgentePorSalida);
+        //System.out.println("agentes por salida actualizado "+ this.mapaAgentePorSalida);
     }
 
     private void distribuirAgentesEntrePuertas(){
