@@ -70,7 +70,7 @@ public class ThreadSimulacion extends Thread{
     Map <Integer,LinkedList> mapaAgentePorSalida;
 
     private boolean calcularDistanciaSalidasSensor = true;
-    private int salidasDisponibles,salidasDisponiblesAnteriores; //Esto lo voy a usar porque si
+    public static int salidasDisponibles,salidasDisponiblesAnteriores; //Esto lo voy a usar porque si
 
 
 
@@ -100,7 +100,7 @@ public class ThreadSimulacion extends Thread{
         }
         mapaAgentePorSalida =new HashMap <Integer,LinkedList>();
         factorSalidas = new HashMap<Integer, Map <String,Integer>>();
-        inicializarFactorDesalojo();
+        MotorSensado.inicializarFactorDesalojo(this);
 
     }
     
@@ -122,7 +122,7 @@ public class ThreadSimulacion extends Thread{
         this.contadorFuego = Proyecto.getProyecto().getPropagacionFuego();
         mapaAgentePorSalida =new HashMap <Integer,LinkedList>();
         factorSalidas = new HashMap<Integer, Map <String,Integer>>();
-        inicializarFactorDesalojo();
+        MotorSensado.inicializarFactorDesalojo(this);
         if (this.ventana==0) {
             VentanaAnimacion.getVentanaAnimacion().getMapa().paint(VentanaAnimacion.getVentanaAnimacion().getMapa().getGraphics());
             VentanaAnimacion.getVentanaAnimacion().getMapaCalor().paint(VentanaAnimacion.getVentanaAnimacion().getMapaCalor().getGraphics());
@@ -392,12 +392,9 @@ public class ThreadSimulacion extends Thread{
         //Y aplicar politica de avisos
 
 
-        //Esto lo tengo que llamar solo si cambian la cantidad de salidas es decir
-//        if(this.calcularDistanciaSalidasSensor){
-            this.asignarSalidasSugeridasSensor();
-            this.calcularDistanciaSalidasSensor = false;
+        this.asignarSalidasSugeridasSensor();
+        this.calcularDistanciaSalidasSensor = false;
 
-  //      }
 
     }
 
