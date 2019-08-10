@@ -96,14 +96,14 @@ public class ThreadSimulacion extends Thread{
             for (int q=0;q<10;q++){//TENGO POR CADA SALIDA 10 POSICIONES PARA 10 TIPOS DE AGENTES (28-09-2015)
             //ESTO DEBERIA DE CAMBIAR AL MOMENTO EN QUE TENGAMOS MAS DE TIPOS DE COMPORTAMIENTOS.
                 ((int[])contadorSalidasTotal.get(z))[q]=0;
-            } 
+            }
         }
         mapaAgentePorSalida =new HashMap <Integer,LinkedList>();
         factorSalidas = new HashMap<Integer, Map <String,Integer>>();
         inicializarFactorDesalojo();
 
     }
-    
+
     private void reinicializacion() {
         this.ac1 = new AutomataCelular(this.cuadradosAlto, this.cuadradrosAncho);
         this.ac2 = new AutomataCelular(this.cuadradosAlto, this.cuadradrosAncho);
@@ -131,10 +131,10 @@ public class ThreadSimulacion extends Thread{
             for (int q=0;q<10;q++){//TENGO POR CADA SALIDA 10 POSICIONES PARA 10 TIPOS DE AGENTES (28-09-2015)
             //ESTO DEBERIA DE CAMBIAR AL MOMENTO EN QUE TENGAMOS MAS DE TIPOS DE COMPORTAMIENTOS.
                 ((int[])contadorSalidas.get(z))[q]=0;
-            } 
+            }
         }
     }
-    
+
     private void randomActualizacion() {
         ArrayList intermedio = new ArrayList();
         this.ordenActualizacion.clear();
@@ -149,13 +149,13 @@ public class ThreadSimulacion extends Thread{
             intermedio.remove(posicion);
         }
     }
-    
+
     private Point getPunto(int nodo) {
         Point punto = new Point();
         punto.setLocation(nodo % this.cuadradrosAncho, nodo / this.cuadradrosAncho);
         return punto;
     }
-    
+
     public boolean isRecalcular() {
         return this.recalcular;
     }
@@ -167,18 +167,18 @@ public class ThreadSimulacion extends Thread{
     private int getRandom(int limiteSuperior) {
         return this.random.nextInt(limiteSuperior);
     }
-    
+
     private double getRandomDouble(){
         return this.random.nextDouble();
     }
-    
+
     private boolean chequearPunto(Point nodo) {
         if (nodo.x > -1 && nodo.x < this.cuadradrosAncho && nodo.y > -1 && nodo.y < this.cuadradosAlto) {
             return true;
         }
         return false;
     }
-    
+
      private ArrayList chequearMoore(Point origen) {
         ArrayList<Integer> vecinos = new ArrayList<Integer>();
         Point p1 = new Point(origen.x - 1, origen.y - 1);
@@ -215,7 +215,7 @@ public class ThreadSimulacion extends Thread{
         }
         return vecinos;
     }
-    
+
     private int obtenerPuertaDestino(Point destino) {
         ListIterator iteradorSalidas = Proyecto.getProyecto().getSalidas().listIterator();
         while (iteradorSalidas.hasNext()) {
@@ -240,7 +240,7 @@ public class ThreadSimulacion extends Thread{
         }
         return false;
     }
-    
+
     private boolean detectarDeadlock(Point nodo, AutomataCelular ac){
         LinkedList visitados=new LinkedList();
         boolean continuarBuscando=true;
@@ -269,7 +269,7 @@ public class ThreadSimulacion extends Thread{
         }
         return false;
     }
-     
+
     private void reglaHumo(Point nodo) {
         double probabilidadHumo = 0;
         if (this.ac1.getCelda(nodo.y, nodo.x).getNivelHumo() <= 0) {
@@ -277,7 +277,7 @@ public class ThreadSimulacion extends Thread{
             for (int i = 0; i < vecinos.size(); ++i) {
                 Point p = this.getPunto(((Integer)vecinos.get(i)).intValue());
                 if (this.ac1.getCelda(p.y, p.x).getNivelHumo() > 0){
-                    
+
                     if(this.ac1.getCelda(p.y, p.x).getNivelHumo() < 0.5){
                         probabilidadHumo=probabilidadHumo + 0.65 *(1.0/8.0);
                     }
@@ -295,8 +295,8 @@ public class ThreadSimulacion extends Thread{
         else{
             this.ac3.getCelda(nodo.y, nodo.x).setNivelHumo(this.ac1.getCelda(nodo.y, nodo.x).getNivelHumo() + 0.1);
         }
-    } 
-     
+    }
+
     private void reglaFuego(Point nodo) { //EL FUEGO Y EL HUMO SE INCREMENTA DE 0.1 EN 0.1 HASTA ALCANZAR SU MAXIMO NIVEL DE 1 (29-09-2015)
         double probabilidadFuego = 0.0;     //EXISTEN 10 NIVELES POSIBLES DE FUEGO y HUMO
         if (this.ac1.getCelda(nodo.y, nodo.x).getNivelFuego() <=0  && this.ac1.getCelda(nodo.y, nodo.x).getNivelCombustibilidad() >= 1) {
@@ -304,7 +304,7 @@ public class ThreadSimulacion extends Thread{
             for (int i = 0; i < vecinos.size(); ++i) {
                 Point p = this.getPunto(((Integer)vecinos.get(i)).intValue());
                 if (this.ac1.getCelda(p.y, p.x).getNivelFuego() >0){
-                    
+
                     //CODIGO PARA QUE EL FUEGO SE DESPLACE MAS RAPIDO CRISTIAN 07-04-2016
                     if(this.ac1.getCelda(p.y, p.x).getNivelFuego() < 0.5){
                         probabilidadFuego=probabilidadFuego + 0.85 *(1.0/8.0);
@@ -313,7 +313,7 @@ public class ThreadSimulacion extends Thread{
                         probabilidadFuego=probabilidadFuego + ((this.ac1.getCelda(p.y, p.x).getNivelFuego())*(1.0/8.0));
                     }
                     //FIN CODIGO PARA QUE EL FUEGO SE DESPLACE MAS RAPIDO CRISTIAN 07-04-2016
-                    
+
                     //ESTE ES EL CÓDIGO QUE ESTAABA
                     //probabilidadFuego=probabilidadFuego + ((this.ac1.getCelda(p.y, p.x).getNivelFuego())*(1.0/8.0));
                 }
@@ -323,13 +323,13 @@ public class ThreadSimulacion extends Thread{
                 this.ac3.getCelda(nodo.y, nodo.x).setNivelHumo(this.ac1.getCelda(nodo.y, nodo.x).getNivelHumo() + 0.1);
                 this.ac3.getCelda(nodo.y, nodo.x).setEstado(4);
                 this.setRecalcular(true);
-            }        
+            }
         }
     }
-    
-    
+
+
     //ESTA FASE CONSTRUYE EL AMBIENTE PARA EL TIEMPO T + 1 SOBRE AC3. Es decir, que AC3 contendrá el nuevo estado del ambiente.
-    //Los automatas AC1 y AC2 son utilizados para poder ir actualizando los agentes durante los subpasos de tiempo para lograr 
+    //Los automatas AC1 y AC2 son utilizados para poder ir actualizando los agentes durante los subpasos de tiempo para lograr
     //el efecto de continuidad. Sin embargo, lograr el efecto de continuidad es un problema que viene dado por la discretización.
     //Mientras que debo lograr el efecto de continuidad en los agentes durante un paso de tiempo (para ello uso los sub pasos)
     //el ambiente debe permanecer sin alteración alguna durante los mecionados sub pasos de tiempo. Es decir, en un paso de tiempo
@@ -347,23 +347,23 @@ public class ThreadSimulacion extends Thread{
                     this.reglaHumo(nodo); //DEBEN IR EN ESTE ORDEN, PUES SI UNA CELDA VACIA NO TIENE O TIENE POCO HUMO PODRIA
                     this.reglaFuego(nodo);//TENER MAS EN T+1, Y SI ADEMAS SE PRENDE FUEGO DEBE TENER MAS HUMO AUN.
                     break;                //CASO CONTARIO SI LA CELDA RECIEN SE PRENDE FUEGO NO DEBERIA DE JUNTAR HUMO EXTRA
-                }                         //Y ES LO QUE SUCEDERIA SI APLICO PRIMERO LA REGLA FUEGO (29-09-2015) 
-                case 4:{ 
+                }                         //Y ES LO QUE SUCEDERIA SI APLICO PRIMERO LA REGLA FUEGO (29-09-2015)
+                case 4:{
                     //if(random.nextDouble()<0.5){
                         this.ac3.getCelda(nodo.y, nodo.x).setNivelFuego(this.ac3.getCelda(nodo.y, nodo.x).getNivelFuego() + 0.1);
                     //}
                     //if(random.nextDouble()<0.5){
                         this.ac3.getCelda(nodo.y, nodo.x).setNivelHumo(this.ac3.getCelda(nodo.y, nodo.x).getNivelHumo() + 0.1);
-                        
+
                     //}
                     break;
                 }
                 case 6: { //ACTUALIZADO (12-10-2015)
                     this.ac3.getCelda(nodo.y,nodo.x).setAgente(null);
-                    this.ac3.getCelda(nodo.y,nodo.x).setEstado(0); //INDICO QUE ESTA CELDA NO TIENE MAS AGENTE PORQUE ESTOY ARMANDO 
+                    this.ac3.getCelda(nodo.y,nodo.x).setEstado(0); //INDICO QUE ESTA CELDA NO TIENE MAS AGENTE PORQUE ESTOY ARMANDO
                     //EL NUEVO ESTADO DEL AMBIENTE. LUEGO DE ESTE PASO DE TIEMPO JUNTARE EL ESTADO DEL SUB MODELO AMBIENTAL
                     //Y EL ESTADO DEL SUB MODELO PEDESTRE.
-                    
+
                     //AQUI SE CONTROLA QUE: DEL PASO DE TIEMPO ANTERIOR UNA CELDA CON AGENTE PUEDE HABER ADQUIRIDO FUEGO
                     //ESTA SITUACIÓN ES VISIBLE SOLO EN EL MOMENTO QUE SE HACE EL MERGE DE AMBOS SUB MODELOS. POR LO TANTO
                     //PODEMOS TENER EL CASO DE QUE UNA CELDA CON AGENTE HAYA ADQUIRIDO FUEGO.
@@ -374,14 +374,14 @@ public class ThreadSimulacion extends Thread{
                         this.setRecalcular(true);//SE DEBEN RECALCULAR DISTANCIAS
                     }
                     else{
-                        this.reglaHumo(nodo);                          
+                        this.reglaHumo(nodo);
                         this.reglaFuego(nodo);
                     }
                     break;
                 }
             }
         }
-        if (this.isRecalcular()) { // DESPUES DE APLICAR LAS REGLAS DE FUEGO, SI ES NECESARIO SE DEBEN RECALCULAR LAS DISTANCIAS 
+        if (this.isRecalcular()) { // DESPUES DE APLICAR LAS REGLAS DE FUEGO, SI ES NECESARIO SE DEBEN RECALCULAR LAS DISTANCIAS
                 Utilidades.recalcularDistancias(this.ac3);//HACIAS CADA UNA DE LAS SALIDAS
                 this.setRecalcular(false);
                 this.calcularDistanciaSalidasSensor = true;
@@ -628,7 +628,7 @@ public class ThreadSimulacion extends Thread{
     }
 
 
-    
+
     private void faseIntencion() {
         boolean chequearComportamiento;
         ListIterator iterador = this.ordenActualizacion.listIterator();
@@ -640,7 +640,7 @@ public class ThreadSimulacion extends Thread{
 
                     //SI EL TIEMPO DE REACCION A LLEGADO A 0 COMIENZO A MOVERME SINO NO ME QUEDO EN MI LUGAR
                     if(! (ac1.getCelda(nodo.y, nodo.x).getAgente().getDemoraReaccion()>0) ){
-                    
+
                         chequearComportamiento=ac1.getCelda(nodo.y, nodo.x).getAgente().getComportamiento().ejecutarComportamiento(this.ac1, this.ac2, this.ac3, nodo);
                         //SE DETECTA QUE EL AGENTE ESTA ENCERRADO Y NO PUEDE MOVERSE POR LO TANTO SE DEBE TOMAR UNA ACCION
                         //LA ACCION POR EL MOMENTO ES MARCARLO COMO AGENTE CAIDO O MUERTO DESCONTARLO DE LOS AGENTE QUE DEBEN
@@ -657,8 +657,8 @@ public class ThreadSimulacion extends Thread{
                                 ac1.getCelda(nodo.y, nodo.x).setEstado(0);
                             }
                         }
-                        
-                        
+
+
                         if(detectarBug){
                             System.out.println("ErrorIntencion ..........................................");
                             System.out.print("NODO: (" + nodo.x + "," + nodo.y + ")  ESTADO: "  + ac1.getCelda(nodo.y,nodo.x).getEstado() + "   TIPO:" + ac1.getCelda(nodo.y,nodo.x).getAgente().getTipo() +   "   FUEGO: " + ac1.getCelda(nodo.y,nodo.x).getNivelFuego() + "   ");
@@ -672,21 +672,21 @@ public class ThreadSimulacion extends Thread{
                                 System.out.println("NODO: (" + vecino.x + "," + vecino.y + ")  ESTADO: "  + ac1.getCelda(vecino.y,vecino.x).getEstado() + "   FUEGO: " + ac1.getCelda(vecino.y,vecino.x).getNivelFuego());
                             }
                         }
-                        
-                        
+
+
                     }
                     else{
                         ac1.getCelda(nodo.y, nodo.x).getAgente().setRespuesta(2);
                         ac1.getCelda(nodo.y, nodo.x).getAgente().setDemoraReaccion(ac1.getCelda(nodo.y, nodo.x).getAgente().getDemoraReaccion()-1);
                     }
-                
+
                 }
             }
         }
     }
-    
+
     private void faseDesicion() {
-        
+
         int randomDesicion = 0;
         double factorPersonas, factorVelocidad;
         int sumaVelocidades;
@@ -698,19 +698,19 @@ public class ThreadSimulacion extends Thread{
             factorVelocidad=0.0;
             Point nodo = this.getPunto(((Integer)iterador.next()).intValue());
             if (this.ac1.getCelda(nodo.y, nodo.x).getPeticiones().size() <= 0) continue;
-            
+
             //A TODOS LOS AGENTES QUE SOLICITARON MOVERSE LES CONTESTO QUE NO
-            for (int i = 0; i < this.ac1.getCelda(nodo.y, nodo.x).getPeticiones().size(); ++i) { 
+            for (int i = 0; i < this.ac1.getCelda(nodo.y, nodo.x).getPeticiones().size(); ++i) {
                 Point peticionDesde = (Point)this.ac1.getCelda(nodo.y, nodo.x).getPeticiones().get(i);
                 this.ac1.getCelda(peticionDesde.y, peticionDesde.x).getAgente().setRespuesta(2);
                 sumaVelocidades=sumaVelocidades+this.ac1.getCelda(peticionDesde.y, peticionDesde.x).getAgente().getVelocidad();
             }
-            
+
             //CODIGO AGREGADO PARA TENER EN CUENTA EL EFECTO FREEZE BY HEATING
             //CRISTIAN 16-11-2015
             //LA SIGUIENTE LINEA DETERMINA LA RELACION ENTRE LA CANTIDAD DE AGENTES EN EL VECINDARIO
             //QUE PRETENDEN LLEGAR A ESGTA POSICIÓN Y LA CANTIDAD DE CLDAS QUE EXISTEN EL VECINDARIO
-            
+
             if(Utilidades.chequearMoore(nodo, ac1).size()>0){
                 //PUEDE PASAR QUE INTENTE DIVIDIR POR CERO. UNA CELDA PUEDE TENER PETICIONES DE UN VECINDARIO DONDE HAYA FUEGO Y PAREDES
                 //POR LO TANTO EL METODO chequearMoore PUEDE DEVOLVER EL VALOR 0. NO SE PUEDE DIVIDIR POR 0.
@@ -721,14 +721,14 @@ public class ThreadSimulacion extends Thread{
                 factorPersonas=0;
                 factorVelocidad=0;
             }
-            
+
             //factorAlfa=(float) 0.5;
             //AHORA TOMO DOS FACTOORES A TENER EN CUENTA Velocidad y Cantidad de Personas QUE INTENTAN ACCEDER A LA MISMA CELDA
             //CON ESTO LOGO REPRODUCIR EL EFECTO DE FREEZE BY HEATING CRISTIAN 29-01-2016
             if(this.getRandomDouble()> (factorVelocidad + factorPersonas)/2 ){
-                
+
                 //OBTENGO EL AGENTE GANADOR EN CASO DE EXISTIR VARIAS PETICIONES. POR EL MOMENTO EL AGENTE GANADOR
-                //SE OBTIENE SOLO DE MANERA ALEATORIA. SI DESEO TENER EN CUENTA LOS PUNTOS DE DAÑO DEBO AÑADIR EL CODIGO 
+                //SE OBTIENE SOLO DE MANERA ALEATORIA. SI DESEO TENER EN CUENTA LOS PUNTOS DE DAÑO DEBO AÑADIR EL CODIGO
                 //CORRESPONDIENTE AQUI (05-10-2015)
                 randomDesicion = this.getRandom(this.ac1.getCelda(nodo.y, nodo.x).getPeticiones().size());
                 ganador = (Point)this.ac1.getCelda(nodo.y, nodo.x).getPeticiones().get(randomDesicion);
@@ -744,7 +744,7 @@ public class ThreadSimulacion extends Thread{
                     case 6: {//SI LA CELDA ESTA OCUPADA POR OTRO AGENTE INDICO QUE EL MOVIMIENTO ES INDETERMINADO
                         this.ac1.getCelda(ganador.y, ganador.x).getAgente().setRespuesta(0);
                     }
-                }   
+                }
                 this.ac1.getCelda(nodo.y, nodo.x).getPeticiones().clear();
                 this.ac1.getCelda(nodo.y, nodo.x).getPeticiones().add(ganador);
             }
@@ -753,7 +753,7 @@ public class ThreadSimulacion extends Thread{
             //}
         }
     }
-    
+
     private void faseBackTraking() {
         int cantidadRespuestas = 0;
         Point nodo = null;
@@ -772,19 +772,19 @@ public class ThreadSimulacion extends Thread{
 
                             respuesta = this.ac1.getCelda(nodo.y, nodo.x).getAgente().getRespuesta();
                             this.ac1.getCelda(ganador.y, ganador.x).getAgente().setRespuesta(respuesta);
-                        
+
                             //System.out.println("ANTES DETECTAR DEADLOCK ->->->->");
-                            //DETECTAR DEADLOCK 
+                            //DETECTAR DEADLOCK
                             if(this.ac1.getCelda(nodo.y, nodo.x).getEstado() == 6 && this.ac1.getCelda(nodo.y, nodo.x).getAgente().getRespuesta()==0 && this.detectarDeadlock(nodo,this.ac1)){
-                                
+
                                 this.ac1.getCelda(nodo.y, nodo.x).getAgente().setRespuesta(2);
                                 this.ac1.getCelda(ganador.y, ganador.x).getAgente().setRespuesta(2);
-                                
+
                                 //CODIGO PARA HACER SWAP INTERCAMBIAR DOS y SOLO EL CASO DE DOS INDIVIDUOS QUE ESTAN DE FRENTE
                                 //EN UN DEADLOCK CRISTIAN 09-04-2016
                                 Point destinoNodoActual=(Point)(Point)this.ac1.getCelda(nodo.y, nodo.x).getAgente().getDestino();
                                 Point destinoGanador=this.ac1.getCelda(ganador.y, ganador.x).getAgente().getDestino();
-                                
+
                                 if((destinoGanador.x==nodo.x && destinoGanador.y==nodo.y)&&(destinoNodoActual.x==ganador.x && destinoNodoActual.y==ganador.y)){
                                     //System.out.println("HIC SWAP");
                                     this.ac1.getCelda(nodo.y, nodo.x).getAgente().setRespuesta(1);
@@ -792,7 +792,7 @@ public class ThreadSimulacion extends Thread{
                                 }
                                 //FIN CODIGO SWAP
                             }
-                            
+
                             //System.out.println("PASE DETECTAR DEADLOCK ->->->->");
                             /*if (this.ac1.getCelda(nodo.y, nodo.x).getEstado() == 6 && nodo.y == this.ac1.getCelda((int)ganador.y, (int)ganador.x).getAgente().getDestino().y && nodo.x == this.ac1.getCelda((int)ganador.y, (int)ganador.x).getAgente().getDestino().x && this.ac1.getCelda(ganador.y, ganador.x).getAgente().getRespuesta() == 0 && this.ac1.getCelda(nodo.y, nodo.x).getAgente().getRespuesta() == 0) {
                                 this.ac1.getCelda(nodo.y, nodo.x).getAgente().setRespuesta(2);
@@ -810,7 +810,7 @@ public class ThreadSimulacion extends Thread{
                 if (this.ac1.getCelda(nodo.y, nodo.x).getEstado() != 6 || this.ac1.getCelda(nodo.y, nodo.x).getAgente().getRespuesta() == 0) continue;
                 ++cantidadRespuestas;
             }
-            
+
             //VARIABLE E IF ELSE PARA VER PORQUE NO FUNCIONA DESP PUEDO BORRARLO CRISTIAN 27/11/2015
             respuestasActual=cantidadRespuestas;
             if(respuestasAnterior==respuestasActual){
@@ -843,17 +843,17 @@ public class ThreadSimulacion extends Thread{
                             System.out.println("NODO: (" + vecino.x + "," + vecino.y + ")  ESTADO: "  + ac1.getCelda(vecino.y,vecino.x).getEstado() + "   FUEGO: " + ac1.getCelda(vecino.y,vecino.x).getNivelFuego());
                         }
                       }
-                    
+
                     }
                 }
                 System.out.println("AGENTES: " + cuentaAgente + "   INDIVIDUOS TOTAL:" + this.cantidadIndividuos + "   CANT. RESP." + cantidadRespuestas  + "   CANT. SALI:" + this.cantidadIndividuosSalieron);
-                
-                
+
+
             }*/
-  
+
         }
     }
-    
+
     public void faseActualizacion() {
         Point nodo = null;
         Point destino = null;
@@ -873,7 +873,7 @@ public class ThreadSimulacion extends Thread{
         while (iterador.hasNext()){//AQUI ACTUALIZO LOS AGENTES A SUS RESPECTIVAS POSICIONES
             nodo = this.getPunto(((Integer)iterador.next()).intValue());
             if (this.ac1.getCelda(nodo.y, nodo.x).getEstado() == 6){
-                if (this.ac1.getCelda(nodo.y, nodo.x).getAgente().getRespuesta() == 1) {//SI EL MOVIMIENTO FUE ACEPTADO 
+                if (this.ac1.getCelda(nodo.y, nodo.x).getAgente().getRespuesta() == 1) {//SI EL MOVIMIENTO FUE ACEPTADO
                     this.ac1.getCelda(nodo.y, nodo.x).getAgente().setContadorVelocidad(this.ac1.getCelda(nodo.y, nodo.x).getAgente().getContadorVelocidad() + 1);
                     destino = this.ac1.getCelda(nodo.y, nodo.x).getAgente().getDestino();
                     switch (this.ac1.getCelda(destino.y, destino.x).getEstado()) {
@@ -896,14 +896,14 @@ public class ThreadSimulacion extends Thread{
 
                             break;
                         }
-                        case 0: 
+                        case 0:
                         case 6: {
                             //PREPARO EL AGENTE PARA ACTUALIZAR SU POSICION. ESTO LO LOGRAMOS SIMPLEMENTE CAMBIANDO LA REFERENCIA
                             //HAGO QUE LA CELDA DESTINO A LA QUE EL AGENTE DEBE MOVERSE EN AC2 APUNTE A ESTE AGENTE
-                            
+
                             //CRISTIAN 30/07/2018
                             this.ac1.getCelda(nodo.y,nodo.x).getAgente().setPasosDados(this.ac1.getCelda(nodo.y,nodo.x).getAgente().getPasosDados()+1);
-                            
+
                             this.ac2.getCelda(destino.y, destino.x).setAgente(this.ac1.getCelda(nodo.y,nodo.x).getAgente());
                             this.ac2.getCelda(destino.y,destino.x).setEstado(6);//INDICO QUE LA CELDA TIENE UN AGENTE
                             if(this.ac2.getCelda(destino.y, destino.x).getNivelHumo()>1){
@@ -911,7 +911,7 @@ public class ThreadSimulacion extends Thread{
                             }
                             this.ac2.getCelda(destino.y, destino.x).getAgente().setTiempoNoActualizacion(0);
                             this.ac2.getCelda(destino.y, destino.x).getAgente().setTiempoEvacuacion(timeSteps);//CAMBIO EN EL SETEO DE ESTA VARIABLE (05-10-2015)
-                            
+
                         }
                     }
                 }
@@ -928,9 +928,9 @@ public class ThreadSimulacion extends Thread{
                 this.ac1.getCelda(nodo.y,nodo.x).getAgente().setRespuesta(0);
             }
         }
-  
+
     }
-    
+
     public void faseActualizacionPintadoPasoTiempo(){
         for (int i = 0; i < this.cuadradosAlto; ++i){
             for (int j = 0; j < this.cuadradrosAncho; ++j){
@@ -957,18 +957,18 @@ public class ThreadSimulacion extends Thread{
             }
         }
     }
-    
-    
+
+
     public void timeStep() {
-        
+
         //FASE DEL SUB MODELO AMBIENTAL
         this.faseAutomata();
-        
+
         //CRISTIAN 07/08/2018
         //Al variar el nuero K debo recordar que tambien debo modificar el codigo que configura el tiempo de reaccion en
         //clase mapa. Dadod que allí este factor se utiliza para multiplicarlos por los segundos de Demora.
         for (int k = 0; k < 10; ++k) {
-            
+
             //CUATRO FASES DEL SUB MODELO PEDESTE
             this.faseIntencion();
             //System.out.println("PASE INTENCION ...");
@@ -986,8 +986,8 @@ public class ThreadSimulacion extends Thread{
             }
             //REASIGNO LOS AUTOMATAS PARA CONTINUAR CON LOS SUB PASOS
             this.ac1=this.ac2;
-            this.ac2 = new AutomataCelular(this.cuadradosAlto, this.cuadradrosAncho); 
-             
+            this.ac2 = new AutomataCelular(this.cuadradosAlto, this.cuadradrosAncho);
+
             if (this.ventana==0) {
                 try {
                     VentanaAnimacion.getVentanaAnimacion().getTextPasoTiempo().setText(Integer.toString(this.timeSteps));
@@ -1006,7 +1006,7 @@ public class ThreadSimulacion extends Thread{
         //SE ENCUENTA EN AC3 y EL SUB MODELO PEDESTRE SE ENCUENTA EN AC1.
         //ADEMAS SE ENCARGA DE PINTAR EN EL CANVAS LA EVOLUCION.
         faseActualizacionPintadoPasoTiempo();
-        
+
         /*this.faseAutomata();
         faseActualizacionPintadoPasoTiempo();
         this.faseAutomata();
@@ -1024,7 +1024,7 @@ public class ThreadSimulacion extends Thread{
         boolean exit = false;
         this.cantidadIndividuos = Proyecto.getProyecto().getCantidadPersonas();
         int numeroCorrida = 1;
-        
+
         //PARA IMPRIMIR NOMBRE DEL PROYECTO
         if (this.ventana==1){
             System.out.println("--- " + Proyecto.getProyecto().getNombreProyecto() + " ---");
@@ -1040,16 +1040,16 @@ public class ThreadSimulacion extends Thread{
         }
 
         while (numeroCorrida <= this.corridas) {
-            this.reinicializacion(); //ARMO EL AUTOMATA PARA INICIAR AC1, 
+            this.reinicializacion(); //ARMO EL AUTOMATA PARA INICIAR AC1,
             cantidadIndividuosAnterior = this.cantidadIndividuos = Proyecto.getProyecto().getCantidadPersonas();
             while (!(this.cantidadIndividuos <= 0 || exit)) {
                 if (cantidadIndividuosAnterior == this.cantidadIndividuos) {
                     if (--control == 0) {
                         String mensaje = "Es posible que la simulación haya incurrido en un estado incorrecto, por favor controle la configuración de la misma.\n DESEA CONTINUAR CON LA EJECUCION ?";
                         int res = JOptionPane.showConfirmDialog(new JFrame(), mensaje, "AVISO, POSIBLE ESTADO ERRONEO", 0, 2, null);
-                        
+
                         detectarBug=true;
-                        
+
                         if (res == 1) {
                             exit = true;
                         } else {
@@ -1064,15 +1064,15 @@ public class ThreadSimulacion extends Thread{
                 this.it = this.ordenActualizacion.listIterator();
                 this.timeStep();
                 this.cantidadIndividuosEvacuaron+=this.cantidadIndividuosSalieron;
-               
+
                 //IMPRESION PARA OBTENER GRAFICAS DE SALIDA
                 if(ventana==1){
                     //System.out.println(this.cantidadIndividuosEvacuaron);
                 }
-                
+
                 this.cantidadIndividuosSalieron = 0;
                 ++this.timeSteps;
-                                          
+
                 synchronized(this) {//PAUSAR EL THREAD (11-10-2015)
                     while(pausado) {
                         try {
@@ -1085,11 +1085,11 @@ public class ThreadSimulacion extends Thread{
                 if(parar)//PARAR EL THREAD (11-10-2015)
                     break;
             }
-            
+
             //LO HAGO DOS VECS PARA CORTAR AMBOS BUCLES
             if(parar)//PARAR EL THREAD (11-10-2015)
                break;
-            
+
             if (this.ventana==1) {
                 this.tiempoEvacuacion = this.timeSteps;
                 this.tiempoEvacuacion*=1.0f;
@@ -1112,7 +1112,7 @@ public class ThreadSimulacion extends Thread{
                          total=total+((int[])contadorSalidas.get(q))[x];
                         }
                     }
-                    
+
                     datos = datos + " ---- Salida: " + q + "    Cant. Individuos: " + total +" ---- \n";
                     for(int x=0;x<10;x++){
                         if(((int[])contadorSalidas.get(q))[x]!=0){
@@ -1123,7 +1123,7 @@ public class ThreadSimulacion extends Thread{
                 }
                 datos = datos + "\n";
                 VentanaSimulacion.getVentanaSimulacion().getParciales().setText(VentanaSimulacion.getVentanaSimulacion().getParciales().getText() + datos);
-                
+
                 this.datosCorridas.add(new Corrida(this.corridas, this.timeSteps, this.tiempoEvacuacion, this.tiempoEvacuacionPersona, this.espacioEvacuacionPersona, this.tiempoExposicionPersona, this.cantidadIndividuosEvacuaron, this.cantidadIndividuosCaidos));
                 VentanaSimulacion.getVentanaSimulacion().getBarraProgreso().setValue(VentanaSimulacion.getVentanaSimulacion().getBarraProgreso().getValue() + 1);
             }
@@ -1133,7 +1133,7 @@ public class ThreadSimulacion extends Thread{
                 this.tiempoEvacuacionPersona/=(float)(Proyecto.getProyecto().getCantidadPersonas() - this.cantidadIndividuos);
                 this.espacioEvacuacionPersona/=(float)(Proyecto.getProyecto().getCantidadPersonas() - this.cantidadIndividuos);
                 this.tiempoExposicionPersona/=(float)(Proyecto.getProyecto().getCantidadPersonas() - this.cantidadIndividuos);
-                
+
                 for(int q=0;q<Proyecto.getProyecto().getSalidas().size();q++){//VOY SUMANDO QUE INDIVIDUOS DE QUE TIPO
                     for(int x=0;x<10;x++){                                    //SALIERON PORQUE PUERTA CRISTIAN 23-03-2016
                         if(((int[])contadorSalidas.get(q))[x]!=0){
@@ -1141,7 +1141,7 @@ public class ThreadSimulacion extends Thread{
                         }
                     }
                 }
-                
+
                 this.datosCorridas.add(new Corrida(this.corridas, this.timeSteps, this.tiempoEvacuacion, this.tiempoEvacuacionPersona, this.espacioEvacuacionPersona, this.tiempoExposicionPersona, this.cantidadIndividuosEvacuaron, this.cantidadIndividuosCaidos));
             }
             ++numeroCorrida;
@@ -1172,12 +1172,12 @@ public class ThreadSimulacion extends Thread{
                 this.varianzaEspacioEvacuacionPersona = (this.varianzaEspacioEvacuacionPersona + Math.pow(this.corrida.getEspacioPersona() - this.espacioEvacuacionPersona, 2.0));
                 this.varianzaTiempoExposicionPersona = (this.varianzaTiempoExposicionPersona + Math.pow(this.corrida.getTiempoExposicionPersona() - this.tiempoExposicionPersona, 2.0));
             }
-            
+
             this.desviacionEstandarTiempoEvacuacion= Math.pow(this.varianzaTiempoEvacuacion,0.5);
             this.desviacionEstandarTiempoEvacuacionPersona= Math.pow(this.varianzaTiempoEvacuacionPersona,0.5);
             this.desviacionEstandarEspacioEvacuacionPersona=Math.pow(this.varianzaEspacioEvacuacionPersona,0.5);
             this.desviacionEstandarTiempoExposicionPersona=Math.pow(this.varianzaTiempoExposicionPersona,0.5);
-         
+
             datos = "";
             datos = datos + "Promedio de Individuos Evacuados: " + numberFormat.format(this.cantidadIndividuosEvacuaronTotal / (this.corridas)) + "    Promedio de Individuos Caidos: " + this.cantidadIndividuosCaidosTotal / (float)(this.corridas) + "\n";
             datos = datos + "MdM Tiempo Total de Evacuación: " + numberFormat.format(((double)this.tiempoEvacuacion)) + "\n";
@@ -1197,7 +1197,7 @@ public class ThreadSimulacion extends Thread{
             datos = datos + " Esp. Medio Recorrido: [  " + numberFormat.format(this.espacioEvacuacionPersona - (2.575 * this.desviacionEstandarEspacioEvacuacionPersona/Math.pow(this.corridas, 0.5))) + " - " + numberFormat.format(this.espacioEvacuacionPersona + (2.575 * this.desviacionEstandarEspacioEvacuacionPersona/Math.pow(this.corridas, 0.5)))+ "  ]\n";
             datos = datos + " =========================================================== \n";
             datos = datos + "\n";
-            
+
             for(int q=0;q<Proyecto.getProyecto().getSalidas().size();q++){
                     int total=0;
                     //Point salida = ((Point)((Salida)Proyecto.getProyecto().getSalidas().get(q)).getNodos().getFirst());
@@ -1207,7 +1207,7 @@ public class ThreadSimulacion extends Thread{
                         }
                     }
                     //datos = datos + "SALIDA " + q + " ("+ salida.x + ","+ salida.y +") TOTAL: " + total/(float)this.corridas + "\n";
-                    
+
                     datos = datos + " ---- Salida: " + q + "    Cant. Individuos: " + total/(float)this.corridas +"  ----\n";
                     for(int x=0;x<10;x++){
                         if(((int[])contadorSalidasTotal.get(q))[x]!=0){
@@ -1247,15 +1247,15 @@ public class ThreadSimulacion extends Thread{
                 this.varianzaEspacioEvacuacionPersona = (float)((double)this.varianzaEspacioEvacuacionPersona + Math.pow(this.corrida.getEspacioPersona() - this.espacioEvacuacionPersona, 2.0));
                 this.varianzaTiempoExposicionPersona = (float)((double)this.varianzaTiempoExposicionPersona + Math.pow(this.corrida.getTiempoExposicionPersona() - this.tiempoExposicionPersona, 2.0));
             }
-            
+
             this.desviacionEstandarTiempoEvacuacion= Math.pow(this.varianzaTiempoEvacuacion,0.5);
             this.desviacionEstandarTiempoEvacuacionPersona= Math.pow(this.varianzaTiempoEvacuacionPersona,0.5);
             this.desviacionEstandarEspacioEvacuacionPersona=Math.pow(this.varianzaEspacioEvacuacionPersona,0.5);
             this.desviacionEstandarTiempoExposicionPersona=Math.pow(this.varianzaTiempoExposicionPersona,0.5);
-            
+
             linferior= numberFormat.format(this.tiempoEvacuacion - (2.575 * (this.desviacionEstandarTiempoEvacuacion/Math.pow(this.corridas, 0.5))));
-            lsuperior= numberFormat.format(this.tiempoEvacuacion + (2.575 * (this.desviacionEstandarTiempoEvacuacion/Math.pow(this.corridas, 0.5))));        
-            
+            lsuperior= numberFormat.format(this.tiempoEvacuacion + (2.575 * (this.desviacionEstandarTiempoEvacuacion/Math.pow(this.corridas, 0.5))));
+
             datos="";
             for(int q=0;q<Proyecto.getProyecto().getSalidas().size();q++){
                     int total=0;
@@ -1265,8 +1265,8 @@ public class ThreadSimulacion extends Thread{
                          total=total+((int[])contadorSalidasTotal.get(q))[x];
                         }
                     }
-                   
-                    
+
+
                     datos = datos + "S" + q + ": " + total/(float)this.corridas + " (";
                     for(int x=0;x<10;x++){
                         if(((int[])contadorSalidasTotal.get(q))[x]!=0){
@@ -1276,7 +1276,7 @@ public class ThreadSimulacion extends Thread{
                     }
                     datos=datos+")";
                 }
-            
+
             VentanaBatch.getVentanaBatch().getBatchActual().setEvacuadosCaidos("Evacuados:"+ ((double)this.cantidadIndividuosEvacuaronTotal / (double)(this.corridas)) + "  Caidos:" + ((double)this.cantidadIndividuosCaidosTotal / (float)(this.corridas)));
             VentanaBatch.getVentanaBatch().getBatchActual().setDescripcionPuertas(datos);
             VentanaBatch.getVentanaBatch().getBatchActual().setResultadoProyecto(Double.toString(this.tiempoEvacuacion));
@@ -1285,25 +1285,25 @@ public class ThreadSimulacion extends Thread{
             VentanaBatch.getVentanaBatch().getBatchActual().setTiempoMedioEvacuacionPersona( "[" + numberFormat.format(this.tiempoEvacuacionPersona - (2.575 * this.desviacionEstandarTiempoEvacuacionPersona/Math.pow(this.corridas, 0.5))) + " - " + numberFormat.format(this.tiempoEvacuacionPersona + (2.575 * this.desviacionEstandarTiempoEvacuacionPersona/Math.pow(this.corridas, 0.5))) + "]");
             //VentanaBatch.getVentanaBatch().reiniciar();
         }
-        
+
         if (this.ventana==0 || this.ventana ==1 ){
             if(!parar){ //SI EL THREAD NO HA SIDO DETENIDO VOLUNTARIAMENTE QUE MUESTRE EL CARTEL
                 JOptionPane.showMessageDialog(new JFrame(), "FIN DE LA SIMULACION", "ANIMACION", 1);
             }
         }
     }
-    
+
     public void pausar(){
         pausado=true;
         System.out.println("Thread Pausado");
     }
-    
+
     public synchronized void reiniciar(){
         pausado=false;
         notify();
         System.out.println("Thread Retomado");
     }
-    
+
     public synchronized void parar() {
         parar = true;
         pausado = false;

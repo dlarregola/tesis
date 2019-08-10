@@ -4,7 +4,7 @@ import java.util.*;
 
 public class MotorSensado {
 
-    public static void inicializarFactorDesalojo(ThreadSimulacion thread){
+   /* public static void inicializarFactorDesalojo(ThreadSimulacion thread){
 
         Iterator<Salida> it = Proyecto.getProyecto().getSalidas().iterator();
         int totalAgentes = Proyecto.getProyecto().getCantidadPersonas();
@@ -73,7 +73,7 @@ public class MotorSensado {
             this.ac1.getCelda(y,x).getSensor().printDistanciaSalidas();
             this.ac1.getCelda(y,x).getSensor().printAgentes();
             System.out.println("\n**********");
-            */
+
 
         }
 
@@ -104,4 +104,6 @@ public class MotorSensado {
         Collections.sort(puerta, new SortByDistancia());
         return puerta;
     }
+    */
+
 }

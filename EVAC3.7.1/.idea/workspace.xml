@@ -1,9 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="73802e9a-bc2e-4eef-a1d5-f5e76905acdc" name="Default" comment="test">
-      <change afterPath="$PROJECT_DIR$/src/LogicaAplicacion/MotorSensado.java" afterDir="false" />
+    <list default="true" id="4d61e1ad-6a86-4e5e-89ce-61097a7430af" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/EVAC3.7.1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Funcionales/Caso 1/FuncionalesCE2.evc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Funcionales/Caso 1/FuncionalesCE3.evc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Funcionales/Caso 2/experimentacionCE4.evc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Funcionales/Caso 2/experimentacionCE5.evc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Funcionales/baseSinAgentes.evc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Funcionales/caso 3/experimentacionCE11.evc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Funcionales/caso 3/experimentacionCE12.evc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Funcionales/caso 3/experimentacionCE13.evc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Funcionales/caso 4/caso4MIX.evc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Funcionales/caso 4/caso4SMC.evc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Funcionales/caso 4/caso4SSPS.evc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Funcionales/experimentacionCE10.evc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Funcionales/experimentacionCE6.evc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Funcionales/experimentacionCE7.evc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Funcionales/experimentacionCE8.evc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Funcionales/experimentacionCE9.evc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogicaAplicacion/MotorSensado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicaAplicacion/MotorSensado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogicaAplicacion/ThreadSimulacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicaAplicacion/ThreadSimulacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Funcionales/FuncionalesCE1.evc" beforeDir="false" afterPath="$PROJECT_DIR$/../Funcionales/Caso 1/FuncionalesCE1.evc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Funcionales/FuncionalesCE2.evc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Funcionales/FuncionalesCE3.evc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Funcionales/experimentacionCE4.evc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Funcionales/experimentacionCE5.evc" beforeDir="false" afterPath="$PROJECT_DIR$/../Funcionales/experimentacionCE5.evc" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,20 +42,14 @@
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Celda.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/MotorSensado.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1755">
-              <caret line="143" column="18" selection-start-line="143" selection-start-column="18" selection-end-line="143" selection-end-column="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3268#3269#0" expanded="true" />
-                <element signature="e#3312#3313#0" expanded="true" />
-                <element signature="e#3825#3826#0" expanded="true" />
-                <element signature="e#3870#3871#0" expanded="true" />
-                <element signature="e#4448#4449#0" expanded="true" />
-                <element signature="e#4482#4483#0" expanded="true" />
-                <element signature="e#4905#4906#0" expanded="true" />
-                <element signature="e#4934#4935#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-368">
+              <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -40,29 +57,29 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/ThreadSimulacion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="86">
-              <caret line="404" lean-forward="true" selection-start-line="404" selection-end-line="404" />
+            <state relative-caret-position="15">
+              <caret line="72" column="4" selection-start-line="72" selection-start-column="4" selection-end-line="72" selection-end-column="4" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#0#77810#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/MotorSensado.java">
+        <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/EVAC3.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="38" column="39" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="39" />
+            <state relative-caret-position="120">
+              <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/ComportamientoSalidaMasLejana.java">
+        <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Sensor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
+            <state relative-caret-position="303">
+              <caret line="98" column="52" selection-start-line="98" selection-start-column="52" selection-end-line="98" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -70,91 +87,58 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Proyecto.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-              <folding>
-                <element signature="e#28689#28690#0" expanded="true" />
-                <element signature="e#28724#28725#0" expanded="true" />
-              </folding>
+            <state>
+              <caret line="488" column="25" selection-start-line="488" selection-start-column="25" selection-end-line="488" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/AutomataCelular.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="630">
+              <caret line="46" column="12" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Agente.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Encuentro una salida</find>
-      <find>salidas</find>
-      <find>lista nodos salidas</find>
-      <find>intencionesAnteriores</find>
-      <find>boto</find>
-      <find>visitados</find>
-      <find>guardar</find>
-      <find>cantidadIndividuosSalieron</find>
-      <find>distanciasa</find>
-      <find>155ce9a1</find>
-      <find>bloquea</find>
-      <find>Sys</find>
-      <find>recalcular</find>
-      <find>estado</find>
-      <find>setSalidaElegida</find>
-      <find>acAmbiente</find>
-      <find>ac</find>
-      <find>Cantidad de salida</find>
-      <find>Min</find>
-      <find>min</find>
-      <find>setNivelFuego</find>
-      <find>this.calcularDistanciaSalidasSensor</find>
-      <find>new_movement_post_fail</find>
-      <find>Unauthorized use of live credentials</find>
-      <find>agentes por salida</find>
-      <find>repl</find>
-      <find>re</find>
-      <find>reinici</find>
-      <find>salidasDisponibles</find>
+      <find>cantid</find>
+      <find>cantidad</find>
       <find>calcularDensidadSensores</find>
+      <find>distribuirAgentesEntrePuertas</find>
+      <find>getce</find>
+      <find>checkDistanciaSalida</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$/.." value="reestructurarCodigo" />
-      </map>
-    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/InterfazUsusario/VentanaConfiguracionAmbiente.java" />
-        <option value="$PROJECT_DIR$/src/LogicaAplicacion/ComportamientoSalidaMasLejana.java" />
-        <option value="$PROJECT_DIR$/src/LogicaAplicacion/SortByDistancia.java" />
-        <option value="$PROJECT_DIR$/src/LogicaAplicacion/Celda.java" />
-        <option value="$PROJECT_DIR$/src/LogicaAplicacion/Mapa.java" />
-        <option value="$PROJECT_DIR$/src/LogicaAplicacion/Sensor.java" />
-        <option value="$PROJECT_DIR$/src/LogicaAplicacion/ComportamientoSalidaMejorTiempo.java" />
-        <option value="$PROJECT_DIR$/src/LogicaAplicacion/Agente.java" />
-        <option value="$PROJECT_DIR$/src/LogicaAplicacion/ComportamientoSalidaSugeridaSensor.java" />
         <option value="$PROJECT_DIR$/src/LogicaAplicacion/Proyecto.java" />
-        <option value="$PROJECT_DIR$/src/LogicaAplicacion/Utilidades.java" />
-        <option value="$PROJECT_DIR$/src/LogicaAplicacion/ThreadSimulacion.java" />
         <option value="$PROJECT_DIR$/src/LogicaAplicacion/MotorSensado.java" />
+        <option value="$PROJECT_DIR$/src/LogicaAplicacion/ThreadSimulacion.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="821" />
+    <option name="height" value="813" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -162,8 +146,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -186,20 +168,19 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="tipoAgente&#9;PSI&#9;JAVA://LogicaAplicacion.Mapa#tipoAgente&#10;tipo Sensor&#9;PSI&#9;JAVA://LogicaAplicacion.Celda#tipoSensor" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -217,7 +198,6 @@
     <configuration name="EVAC3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="LogicaAplicacion.EVAC3" />
       <module name="EVAC3.7.1" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="LogicaAplicacion.*" />
@@ -228,33 +208,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="TEST_OBJECT" value="class" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="TestNG">
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.EVAC3" />
-        <item itemvalue="Application.EVAC3" />
-        <item itemvalue="Application.EVAC3" />
         <item itemvalue="Application.EVAC3" />
       </list>
     </recent_temporary>
@@ -264,470 +219,120 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="73802e9a-bc2e-4eef-a1d5-f5e76905acdc" name="Default" comment="" />
-      <created>1544027041572</created>
+      <changelist id="4d61e1ad-6a86-4e5e-89ce-61097a7430af" name="Default Changelist" comment="" />
+      <created>1563042157468</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1544027041572</updated>
-      <workItem from="1544027043157" duration="72000" />
-      <workItem from="1544027126089" duration="1076000" />
-      <workItem from="1544032817610" duration="7299000" />
-      <workItem from="1544206246587" duration="505000" />
-      <workItem from="1544216741011" duration="10973000" />
-      <workItem from="1544793475986" duration="1197000" />
-      <workItem from="1545050287478" duration="1612000" />
-      <workItem from="1545138029068" duration="170000" />
-      <workItem from="1546951675891" duration="1349000" />
-      <workItem from="1547148806961" duration="7598000" />
-      <workItem from="1547906036917" duration="6766000" />
-      <workItem from="1550681349124" duration="12303000" />
-      <workItem from="1551384078520" duration="952000" />
-      <workItem from="1551883440915" duration="3173000" />
-      <workItem from="1552414119281" duration="76736000" />
-      <workItem from="1556280457262" duration="606000" />
-      <workItem from="1556461189869" duration="26000" />
-      <workItem from="1556496716701" duration="4250000" />
-      <workItem from="1557158549005" duration="231000" />
-      <workItem from="1557164743336" duration="495000" />
-      <workItem from="1557423330907" duration="1899000" />
-      <workItem from="1557836747784" duration="864000" />
-      <workItem from="1557844614623" duration="859000" />
-      <workItem from="1557856262367" duration="1455000" />
-      <workItem from="1558002592565" duration="1064000" />
-      <workItem from="1562587922800" duration="1805000" />
-      <workItem from="1562592749373" duration="3941000" />
-      <workItem from="1562782072491" duration="3761000" />
+      <updated>1563042157468</updated>
+      <workItem from="1563042158949" duration="5151000" />
+      <workItem from="1563381554694" duration="5764000" />
+      <workItem from="1565438965817" duration="1755000" />
     </task>
-    <task id="LOCAL-00001" summary="test">
-      <created>1562593561716</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1562593561716</updated>
-    </task>
-    <task id="LOCAL-00002" summary="test">
-      <created>1562595156589</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1562595156589</updated>
-    </task>
-    <task id="LOCAL-00003" summary="test">
-      <created>1563041693533</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1563041693533</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156090000" />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
+    <option name="totallyTimeSpent" value="12670000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23748212" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25679544" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
-      <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info id="Capture Tool" order="6" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32900944" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4985694" weight="0.29638556" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.30963856" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" weight="0.37864077" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49928468" weight="0.32891566" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32891566" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50143063" side_tool="true" weight="0.29638556" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32891566" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32771084" />
-      <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5007153" side_tool="true" weight="0.32891566" />
+      <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Database" order="6" />
-      <window_info anchor="right" id="Maven Projects" order="7" />
+      <window_info anchor="right" id="Maven" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info anchor="right" id="Maven" order="9" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="Vcs.Log.History.Properties">
-    <option name="COLUMN_ORDER">
-      <list>
-        <option value="0" />
-        <option value="2" />
-        <option value="3" />
-        <option value="1" />
-      </list>
-    </option>
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/InterfazUsusario/VentanaAnimacion.java</url>
-          <line>217</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/InterfazUsusario/VentanaBatch.java</url>
-          <line>120</line>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/InterfazUsusario/VentanaSimulacion.java</url>
-          <line>319</line>
-          <properties />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LogicaAplicacion/ThreadSimulacion.java</url>
-          <line>81</line>
-          <properties />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LogicaAplicacion/ThreadSimulacion.java</url>
-          <line>121</line>
-          <properties />
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
-  <component name="debuggerHistoryManager">
-    <expressions id="watch">
-      <expression>
-        <expression-string>ac1.getCelda(i, j).getEstado()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Celda.java">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/src.zip!/javax/swing/JComboBox.java" />
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/src.zip!/javax/swing/plaf/basic/BasicRadioButtonUI.java" />
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/src.zip!/java/awt/Window.java" />
-    <entry file="file://$PROJECT_DIR$/src/InterfazUsusario/VentanaAcerca.java">
+    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/EVAC3.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Batch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-617">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/src.zip!/javax/swing/AbstractButton.java" />
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/src.zip!/javax/swing/JLabel.java" />
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/src.zip!/javax/swing/JComponent.java" />
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/src.zip!/java/awt/Point.java" />
-    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Contador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+        <state relative-caret-position="120">
+          <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/AutomataCelular.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/ComportamientoPropagacionEstadoEvacuacion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/DistanciaSalida.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="3" column="28" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Comportamiento.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="39" column="16" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/src.zip!/java/lang/Double.java" />
-    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/ComportamientoSalePorDondeEntro.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="61" column="71" selection-start-line="61" selection-start-column="71" selection-end-line="61" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/ComportamientoSalidaMejorTiempo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="224" column="34" lean-forward="true" selection-start-line="224" selection-start-column="34" selection-end-line="224" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/ComportamientoSalidaMasCercana.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/InterfazUsusario/VentanaConfiguracionAmbiente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1104">
-          <caret line="103" column="86" selection-start-line="103" selection-start-column="68" selection-end-line="103" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Mapa.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2295">
-          <caret line="167" column="13" selection-start-line="165" selection-start-column="20" selection-end-line="167" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/InterfazUsusario/VentanaBatch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="120" column="55" lean-forward="true" selection-start-line="120" selection-start-column="55" selection-end-line="120" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/ComportamientoSalidaSugeridaSensor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="34" column="37" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/EVAC3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="19" column="45" lean-forward="true" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Salida.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Corrida.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-267">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/MapaCalor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
-          <caret line="76" column="27" selection-start-line="76" selection-start-column="27" selection-end-line="76" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/SortByDistancia.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Memoria.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/InterfazUsusario/VentanaAnimacion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1155">
-          <caret line="217" column="57" selection-start-line="217" selection-start-column="57" selection-end-line="217" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Sensor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="96" column="27" selection-start-line="96" selection-start-column="27" selection-end-line="96" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2291#2292#0" expanded="true" />
-            <element signature="e#2333#2334#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/InterfazUsusario/VentanaSimulacion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1035">
-          <caret line="319" selection-start-line="319" selection-end-line="319" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Utilidades.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7200">
-          <caret line="489" column="17" selection-start-line="489" selection-start-column="17" selection-end-line="489" selection-end-column="17" />
+        <state relative-caret-position="630">
+          <caret line="46" column="12" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Agente.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="915">
-          <caret line="65" column="67" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="67" />
-          <folding>
-            <element signature="e#6872#6873#0" expanded="true" />
-            <element signature="e#6922#6923#0" expanded="true" />
-            <element signature="e#8294#8295#0" expanded="true" />
-            <element signature="e#8319#8320#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="135">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/InterfazUsusario/VentanaConfiguracionGeneral.java">
+    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Sensor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1935">
-          <caret line="364" column="53" selection-start-line="364" selection-start-column="53" selection-end-line="364" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/InterfazUsusario/VentanaPrincipal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4110">
-          <caret line="470" column="71" selection-start-line="470" selection-start-column="51" selection-end-line="470" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Celda.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1755">
-          <caret line="143" column="18" selection-start-line="143" selection-start-column="18" selection-end-line="143" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3268#3269#0" expanded="true" />
-            <element signature="e#3312#3313#0" expanded="true" />
-            <element signature="e#3825#3826#0" expanded="true" />
-            <element signature="e#3870#3871#0" expanded="true" />
-            <element signature="e#4448#4449#0" expanded="true" />
-            <element signature="e#4482#4483#0" expanded="true" />
-            <element signature="e#4905#4906#0" expanded="true" />
-            <element signature="e#4934#4935#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/ComportamientoSalidaMasLejana.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
+        <state relative-caret-position="303">
+          <caret line="98" column="52" selection-start-line="98" selection-start-column="52" selection-end-line="98" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Proyecto.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        <state>
+          <caret line="488" column="25" selection-start-line="488" selection-start-column="25" selection-end-line="488" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/classes/LogicaAplicacion/AutomataCelular.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="50" column="47" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="47" />
           <folding>
-            <element signature="e#28689#28690#0" expanded="true" />
-            <element signature="e#28724#28725#0" expanded="true" />
+            <element signature="e#0#1554#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/MotorSensado.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="38" column="39" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="39" />
+        <state relative-caret-position="-368">
+          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/ThreadSimulacion.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="404" lean-forward="true" selection-start-line="404" selection-end-line="404" />
+        <state relative-caret-position="15">
+          <caret line="72" column="4" selection-start-line="72" selection-start-column="4" selection-end-line="72" selection-end-column="4" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#0#77810#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -735,17 +340,6 @@
   </component>
   <component name="masterDetails">
     <states>
-      <state key="ArquillianSettingsConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
@@ -801,6 +395,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -821,17 +416,6 @@
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
           <last-edited>EVAC3.7.1</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ScopeChooserConfigurable.UI">
-        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>
