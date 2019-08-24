@@ -2,31 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d61e1ad-6a86-4e5e-89ce-61097a7430af" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/EVAC3.7.1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Funcionales/Caso 1/FuncionalesCE2.evc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Funcionales/Caso 1/FuncionalesCE3.evc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Funcionales/Caso 2/experimentacionCE4.evc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Funcionales/Caso 2/experimentacionCE5.evc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Funcionales/baseSinAgentes.evc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Funcionales/caso 3/experimentacionCE11.evc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Funcionales/caso 3/experimentacionCE12.evc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Funcionales/caso 3/experimentacionCE13.evc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Funcionales/caso 4/caso4MIX.evc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Funcionales/caso 4/caso4SMC.evc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Funcionales/caso 4/caso4SSPS.evc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Funcionales/experimentacionCE10.evc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Funcionales/experimentacionCE6.evc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Funcionales/experimentacionCE7.evc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Funcionales/experimentacionCE8.evc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Funcionales/experimentacionCE9.evc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogicaAplicacion/Agente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicaAplicacion/Agente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogicaAplicacion/AutomataCelular.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicaAplicacion/AutomataCelular.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogicaAplicacion/Batch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicaAplicacion/Batch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogicaAplicacion/Celda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicaAplicacion/Celda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogicaAplicacion/Comportamiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicaAplicacion/Comportamiento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogicaAplicacion/ComportamientoPropagacionEstadoEvacuacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicaAplicacion/ComportamientoPropagacionEstadoEvacuacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogicaAplicacion/ComportamientoSalePorDondeEntro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicaAplicacion/ComportamientoSalePorDondeEntro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogicaAplicacion/ComportamientoSalidaMasCercana.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicaAplicacion/ComportamientoSalidaMasCercana.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogicaAplicacion/ComportamientoSalidaMasLejana.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicaAplicacion/ComportamientoSalidaMasLejana.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogicaAplicacion/ComportamientoSalidaMejorTiempo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicaAplicacion/ComportamientoSalidaMejorTiempo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogicaAplicacion/Contador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicaAplicacion/Contador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogicaAplicacion/Corrida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicaAplicacion/Corrida.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogicaAplicacion/DistanciaSalida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicaAplicacion/DistanciaSalida.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogicaAplicacion/EVAC3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicaAplicacion/EVAC3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogicaAplicacion/Mapa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicaAplicacion/Mapa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogicaAplicacion/MapaCalor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicaAplicacion/MapaCalor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogicaAplicacion/Memoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicaAplicacion/Memoria.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LogicaAplicacion/MotorSensado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicaAplicacion/MotorSensado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogicaAplicacion/Proyecto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicaAplicacion/Proyecto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogicaAplicacion/Salida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicaAplicacion/Salida.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LogicaAplicacion/ThreadSimulacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicaAplicacion/ThreadSimulacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Funcionales/FuncionalesCE1.evc" beforeDir="false" afterPath="$PROJECT_DIR$/../Funcionales/Caso 1/FuncionalesCE1.evc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Funcionales/FuncionalesCE2.evc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Funcionales/FuncionalesCE3.evc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Funcionales/experimentacionCE4.evc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Funcionales/experimentacionCE5.evc" beforeDir="false" afterPath="$PROJECT_DIR$/../Funcionales/experimentacionCE5.evc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogicaAplicacion/Utilidades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicaAplicacion/Utilidades.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,15 +39,14 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Celda.java">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/MotorSensado.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-368">
-              <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+            <state relative-caret-position="335">
+              <caret line="151" column="45" lean-forward="true" selection-start-line="151" selection-start-column="45" selection-end-line="151" selection-end-column="45" />
+              <folding>
+                <element signature="e#646#663#0" expanded="true" />
+                <element signature="e#3519#3536#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -57,56 +54,21 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/ThreadSimulacion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="72" column="4" selection-start-line="72" selection-start-column="4" selection-end-line="72" selection-end-column="4" />
+            <state relative-caret-position="263">
+              <caret line="390" selection-start-line="390" selection-end-line="390" />
               <folding>
-                <element signature="e#0#77810#0" expanded="true" />
+                <element signature="e#0#73676#0" expanded="true" />
+                <element signature="e#67022#67023#0" expanded="true" />
+                <element signature="e#67063#67064#0" expanded="true" />
+                <element signature="e#67331#67332#0" expanded="true" />
+                <element signature="e#67382#67383#0" expanded="true" />
+                <element signature="e#67437#67438#0" expanded="true" />
+                <element signature="e#67507#67508#0" expanded="true" />
+                <element signature="e#67546#67547#0" expanded="true" />
+                <element signature="e#67572#67573#0" expanded="true" />
+                <element signature="e#67640#67641#0" expanded="true" />
+                <element signature="e#67676#67677#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/EVAC3.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Sensor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="98" column="52" selection-start-line="98" selection-start-column="52" selection-end-line="98" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Proyecto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="488" column="25" selection-start-line="488" selection-start-column="25" selection-end-line="488" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/AutomataCelular.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="46" column="12" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Agente.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -117,10 +79,13 @@
     <findStrings>
       <find>cantid</find>
       <find>cantidad</find>
-      <find>calcularDensidadSensores</find>
       <find>distribuirAgentesEntrePuertas</find>
       <find>getce</find>
       <find>checkDistanciaSalida</find>
+      <find>asignarSalidaAgente</find>
+      <find>inicializarFactorDesalojo</find>
+      <find>getac</find>
+      <find>calcularDensidadSensores</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -146,6 +111,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -169,7 +135,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -231,13 +196,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12670000" />
+    <option name="totallyTimeSpent" value="15467000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25679544" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2746781" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -246,7 +211,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" weight="0.37864077" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.11325301" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -256,7 +221,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5007153" side_tool="true" weight="0.32891566" />
-      <window_info anchor="bottom" id="Messages" order="12" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32891566" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -272,44 +237,12 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Celda.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/EVAC3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/AutomataCelular.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="46" column="12" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Agente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Sensor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="98" column="52" selection-start-line="98" selection-start-column="52" selection-end-line="98" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Proyecto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="488" column="25" selection-start-line="488" selection-start-column="25" selection-end-line="488" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Celda.java" />
+    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/EVAC3.java" />
+    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/AutomataCelular.java" />
+    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Agente.java" />
+    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Sensor.java" />
+    <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/Proyecto.java" />
     <entry file="file://$PROJECT_DIR$/build/classes/LogicaAplicacion/AutomataCelular.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="458">
@@ -320,19 +253,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/InterfazUsusario/VentanaSimulacion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-196">
+          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.sdkman/candidates/java/7.0.222-zulu/src.zip!/java/util/AbstractList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="297" column="34" selection-start-line="297" selection-start-column="34" selection-end-line="297" selection-end-column="34" />
+          <folding>
+            <element signature="e#10880#10881#0" expanded="true" />
+            <element signature="e#10918#10919#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.sdkman/candidates/java/7.0.222-zulu/src.zip!/java/util/AbstractSequentialList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="238" column="23" selection-start-line="238" selection-start-column="23" selection-end-line="238" selection-end-column="23" />
+          <folding>
+            <element signature="e#9831#9832#0" expanded="true" />
+            <element signature="e#9868#9869#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.sdkman/candidates/java/7.0.222-zulu/src.zip!/java/util/Iterator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="59" column="12" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/MotorSensado.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-368">
-          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        <state relative-caret-position="335">
+          <caret line="151" column="45" lean-forward="true" selection-start-line="151" selection-start-column="45" selection-end-line="151" selection-end-column="45" />
+          <folding>
+            <element signature="e#646#663#0" expanded="true" />
+            <element signature="e#3519#3536#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LogicaAplicacion/ThreadSimulacion.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="72" column="4" selection-start-line="72" selection-start-column="4" selection-end-line="72" selection-end-column="4" />
+        <state relative-caret-position="263">
+          <caret line="390" selection-start-line="390" selection-end-line="390" />
           <folding>
-            <element signature="e#0#77810#0" expanded="true" />
+            <element signature="e#0#73676#0" expanded="true" />
+            <element signature="e#67022#67023#0" expanded="true" />
+            <element signature="e#67063#67064#0" expanded="true" />
+            <element signature="e#67331#67332#0" expanded="true" />
+            <element signature="e#67382#67383#0" expanded="true" />
+            <element signature="e#67437#67438#0" expanded="true" />
+            <element signature="e#67507#67508#0" expanded="true" />
+            <element signature="e#67546#67547#0" expanded="true" />
+            <element signature="e#67572#67573#0" expanded="true" />
+            <element signature="e#67640#67641#0" expanded="true" />
+            <element signature="e#67676#67677#0" expanded="true" />
           </folding>
         </state>
       </provider>
