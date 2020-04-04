@@ -95,8 +95,13 @@ public class Sensor {
     }
 
     public void setSalidasPorDistancia(ArrayList<DistanciaSalida> salidasPorDistancia) {
-        this.salidasPorDistancia = salidasPorDistancia;
-        this.salidaMasCercana = salidasPorDistancia.get(0).getSalida();
+        try{
+            this.salidasPorDistancia = salidasPorDistancia;
+
+            this.salidaMasCercana = salidasPorDistancia.get(0).getSalida();
+        }catch (Exception e){
+        }
+
     }
     public void printDistanciaSalidas(){
         Iterator<DistanciaSalida> it = this.salidasPorDistancia.iterator();

@@ -10,9 +10,6 @@ public class MotorSensado {
         Iterator<Salida> it = Proyecto.getProyecto().getSalidas().iterator();
         int totalAgentes = Proyecto.getProyecto().getCantidadPersonas();
         int cantidadSalidas = Proyecto.getProyecto().getCantidadSalidas();
-        thread.setSalidasDisponibles(Proyecto.getProyecto().getSalidas().size());
-
-
 
         while(it.hasNext()){
             Salida sal = it.next();

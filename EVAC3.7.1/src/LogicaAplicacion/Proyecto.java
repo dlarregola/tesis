@@ -474,6 +474,7 @@ public class Proyecto {
                 //almacenarArchivo = cadenaSinBlancos.length() > 0 ? almacenarArchivo + Proyecto.getProyecto().getNotasProyecto() + "@F@" : almacenarArchivo + "INGRESE NOTAS AQUI @F@";
                 pw.println(almacenarArchivo);
                 almacenarArchivo = "";
+                int tipo = 0;
                 for (int i = 0; i < Proyecto.getProyecto().getAc().getAlto(); ++i) {
                     for (int j = 0; j < Proyecto.getProyecto().getAc().getAncho(); ++j) {
                         almacenarArchivo = almacenarArchivo + "[";
@@ -485,7 +486,16 @@ public class Proyecto {
 
                         almacenarArchivo = almacenarArchivo + "," + Integer.toString(Proyecto.getProyecto().getAc().getCelda(i, j).getTipoSensor());
                         if (Proyecto.getProyecto().getAc().getCelda(i, j).getEstado() == 6) {
-                            almacenarArchivo = almacenarArchivo + "," + Integer.toString(Proyecto.getProyecto().getAc().getCelda(i, j).getAgente().getTipo());
+                            //tipo = Proyecto.getProyecto().getAc().getCelda(i, j).getAgente().getTipo();
+                           // tipo = 0;
+                            if (tipo == 0){
+                                tipo = 5;
+                            }else if (tipo == 5){
+                                tipo = 1;
+                            }else{
+                                tipo = 0;
+                            }
+                            almacenarArchivo = almacenarArchivo + "," + Integer.toString(tipo);
                         }
                         almacenarArchivo = almacenarArchivo + "]";
                         almacenarArchivo = almacenarArchivo + "/";

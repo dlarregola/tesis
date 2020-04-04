@@ -69,8 +69,6 @@ public class ThreadSimulacion extends Thread {
     private Map<Integer, Map<String, Integer>> factorSalidas; //SUMO Mapa con con cada puerta y el factor de desalojo de cada puerta
     private Map<Integer, LinkedList> mapaAgentePorSalida;
 
-    private int salidasDisponibles, salidasDisponiblesAnteriores; //Esto lo voy a usar porque si
-
 
     public ThreadSimulacion(int corridas, int ventana) {
         this.corridas = corridas;
@@ -99,6 +97,7 @@ public class ThreadSimulacion extends Thread {
         mapaAgentePorSalida = new HashMap<Integer, LinkedList>();
         factorSalidas = new HashMap<Integer, Map<String, Integer>>();
         MotorSensado.inicializarFactorDesalojo(this);
+        System.out.println("factor desalojo" + factorSalidas);
 
     }
 
@@ -870,6 +869,8 @@ public class ThreadSimulacion extends Thread {
                         }
                     }
 
+
+
                     datos = datos + " ---- Salida: " + q + "    Cant. Individuos: " + total + " ---- \n";
                     for (int x = 0; x < 10; x++) {
                         if (((int[]) contadorSalidas.get(q))[x] != 0) {
@@ -1068,14 +1069,7 @@ public class ThreadSimulacion extends Thread {
         System.out.println("Thread Parado");
     }
 
-    public int getSalidasDisponibles() {
-        return salidasDisponibles;
-    }
 
-    public void setSalidasDisponibles(int salidasDisponibles) {
-        this.salidasDisponibles = salidasDisponibles;
-        this.salidasDisponiblesAnteriores = this.salidasDisponibles;
-    }
 
     public void addFactorSalidas(int salida, Map<String, Integer> aux) {
         this.factorSalidas.put(salida, aux);
