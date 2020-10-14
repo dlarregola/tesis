@@ -31,6 +31,7 @@ public class MotorSensado {
  public static void asignarSalidasSugeridasSensor(ThreadSimulacion thread){
         //Necesito mantener la intencion (cantidad de agentes que envio a cada puerta):
         //Guardo por cada puerta cuantos agente envio a dicha puerta
+        inicializarFactorDesalojo(thread);
         calcularDensidadSensores(thread.getAc1());
         distribuirAgentesEntrePuertas(thread);
  }

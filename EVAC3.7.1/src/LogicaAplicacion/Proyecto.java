@@ -486,15 +486,15 @@ public class Proyecto {
 
                         almacenarArchivo = almacenarArchivo + "," + Integer.toString(Proyecto.getProyecto().getAc().getCelda(i, j).getTipoSensor());
                         if (Proyecto.getProyecto().getAc().getCelda(i, j).getEstado() == 6) {
-                            //tipo = Proyecto.getProyecto().getAc().getCelda(i, j).getAgente().getTipo();
-                           // tipo = 0;
-                            if (tipo == 0){
+                            tipo = Proyecto.getProyecto().getAc().getCelda(i, j).getAgente().getTipo();
+                            //tipo = 5;
+                           /* if (tipo == 0){
                                 tipo = 5;
                             }else if (tipo == 5){
                                 tipo = 1;
                             }else{
                                 tipo = 0;
-                            }
+                            }*/
                             almacenarArchivo = almacenarArchivo + "," + Integer.toString(tipo);
                         }
                         almacenarArchivo = almacenarArchivo + "]";
